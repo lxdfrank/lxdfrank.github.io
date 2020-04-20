@@ -20,14 +20,18 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="麦兜">
-<meta property="og:url" content="http://yoursite.com/tags/smarthome/index.html">
+  <meta name="description" content="Linux配置内网DNS、域名解析配置方式，1）cat &#x2F;etc&#x2F;hosts 使用host文件的方式2）使用 &#x2F;etc&#x2F;resolv.conf 配置dns服务器。 windows在C:\Windows\System32\drivers\etc\hosts文件中添加127.0.0.1 xxx.xxx.xxx(指定域名)这样在访问xxx.xxx.xxx时即会访问127.0.0.1地址，只在局域网有效">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NasBuild">
+<meta property="og:url" content="http://yoursite.com/2020/04/16/NasBuild/index.html">
 <meta property="og:site_name" content="麦兜">
+<meta property="og:description" content="Linux配置内网DNS、域名解析配置方式，1）cat &#x2F;etc&#x2F;hosts 使用host文件的方式2）使用 &#x2F;etc&#x2F;resolv.conf 配置dns服务器。 windows在C:\Windows\System32\drivers\etc\hosts文件中添加127.0.0.1 xxx.xxx.xxx(指定域名)这样在访问xxx.xxx.xxx时即会访问127.0.0.1地址，只在局域网有效">
+<meta property="article:published_time" content="2020-04-16T14:03:26.000Z">
+<meta property="article:modified_time" content="2020-04-20T03:53:19.381Z">
 <meta property="article:author" content="XD Lv">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/tags/smarthome/">
+<link rel="canonical" href="http://yoursite.com/2020/04/16/NasBuild/">
 
 
 <script id="page-configurations">
@@ -35,12 +39,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-Hans'
   };
 </script>
 
-  <title>Tag: smarthome | 麦兜</title>
+  <title>NasBuild | 麦兜</title>
   
 
 
@@ -148,53 +152,105 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">smarthome
-          <small>Tag</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/16/NasBuild/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="XD Lv">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="麦兜">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          NasBuild
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-04-16 22:03:26" itemprop="dateCreated datePublished" datetime="2020-04-16T22:03:26+08:00">2020-04-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-04-20 11:53:19" itemprop="dateModified" datetime="2020-04-20T11:53:19+08:00">2020-04-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-04-11T09:26:32+08:00"
-              content="2020-04-11">
-          04-11
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/04/11/smarthome/" itemprop="url">
-            <span itemprop="name">smarthome</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
+        <p>Linux配置内网DNS、域名解析<br>配置方式，<br>1）cat /etc/hosts 使用host文件的方式<br>2）使用 /etc/resolv.conf 配置dns服务器。</p>
+<p>windows<br>在C:\Windows\System32\drivers\etc\hosts文件中添加<br>127.0.0.1 xxx.xxx.xxx(指定域名)<br>这样在访问xxx.xxx.xxx时即会访问127.0.0.1地址，只在局域网有效</p>
+<a id="more"></a>
+<p>Openwrt + Samba</p>
 
     </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作!</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="XD Lv WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+
   </div>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/14/openwrt/" rel="prev" title="openwrt">
+      <i class="fa fa-chevron-left"></i> openwrt
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
   
   
   
 
-  
-
+  </div>
 
 
           </div>
