@@ -187,7 +187,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-01 00:32:48" itemprop="dateModified" datetime="2020-06-01T00:32:48+08:00">2020-06-01</time>
+                <time title="Modified: 2020-06-10 23:50:24" itemprop="dateModified" datetime="2020-06-10T23:50:24+08:00">2020-06-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -213,6 +213,11 @@
           <center>搭建web服务器</center>
 
 <p><a href="https://blog.csdn.net/fzk0813/article/details/90644970" target="_blank" rel="noopener">嵌入式web服务器</a><br>嵌入式WEB服务器常见的有：Lighttpd, Shttpd, Thttpd, Boa, Mini_httpd, Appweb, Goahead<br><a href="https://www.jianshu.com/p/271a1649a853" target="_blank" rel="noopener">阿里云服务器上安装hexo服务器</a></p>
+<center>本地文件上传VPS</center>
+
+<h3 id="server端"><a href="#server端" class="headerlink" title="server端"></a>server端</h3><p>#!/usr/bin/env python3<br>#-<em>- coding: utf-8 -</em><br><strong>author</strong> = ‘Xiaodong Lv’<br>from collections import deque<br>from threading import Lock, Thread<br>import threading<br>import socket<br>import time<br>import os</p>
+<p>def main():<br>    address = (‘本地公网IP’,31508)<br>    server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)  #SOCK_DGRAM UDP  SOCK_STREAM TCP<br>    server.bind(address)<br>    while True:<br>        ra,client_addr = server.recvfrom(10)<br>        print(ra,client_addr)<br>if <strong>name</strong> == ‘<strong>main</strong>‘:<br>    main()</p>
+<h3 id="client端"><a href="#client端" class="headerlink" title="client端"></a>client端</h3><p>#!/usr/bin/env python3<br>#-<em>- coding: utf-8 -</em>-<br>import socket<br>import sys, getopt<br>def main():<br>    address = (‘阿里云公网IP’,31508)<br>    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)<br>    while True:<br>        inputDATA = input(“please input send data:”)<br>        if inputDATA==’’:<br>            break<br>        else:<br>            inputDATA = str(inputDATA)<br>            s.sendto(inputDATA.encode(),address)<br>            print(inputDATA)<br>    s.close()<br>if <strong>name</strong> == “<strong>main</strong>“:<br>   main()</p>
 
       
     </div>
