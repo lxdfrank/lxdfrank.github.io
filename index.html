@@ -80,7 +80,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="تشغيل شريط التصفح">
+    <div class="toggle" aria-label="Navigationsleiste an/ausschalten">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -109,22 +109,22 @@
   <ul id="menu" class="menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Startseite</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>الوسوم</a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Schlagwörter</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>التصنيفات</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Kategorien</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>الأرشيفات</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archiv</a>
 
   </li>
   </ul>
@@ -156,6 +156,79 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/12/Xilinx/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="XD Lv">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="麦兜">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/12/Xilinx/" class="post-title-link" itemprop="url">Xilinx</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Veröffentlicht am</span>
+
+              <time title="Erstellt: 2020-09-12 16:56:29" itemprop="dateCreated datePublished" datetime="2020-09-12T16:56:29+08:00">2020-09-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Bearbeitet am</span>
+                <time title="Geändert am: 2020-09-16 10:32:26" itemprop="dateModified" datetime="2020-09-16T10:32:26+08:00">2020-09-16</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <a id="more"></a>
+<h2 id="教程系列"><a href="#教程系列" class="headerlink" title="教程系列"></a>教程系列</h2><h3 id="Ubuntu环境安装"><a href="#Ubuntu环境安装" class="headerlink" title="Ubuntu环境安装"></a>Ubuntu环境安装</h3><p>双向文件传输 共享文件夹 复制拖拽 增强工具安装<br>增强工具第一次安装不上可以弹出iso重新安装<br>可设置ubuntu熄屏时间</p>
+<h3 id="petalinux安装"><a href="#petalinux安装" class="headerlink" title="petalinux安装"></a>petalinux安装</h3><p>设置安装路径 /opt/pkg/petalinux<br>petalinux-v2017.4-final-installer.run  /文件夹</p>
+<h3 id="linux-vivado安装"><a href="#linux-vivado安装" class="headerlink" title="linux vivado安装"></a>linux vivado安装</h3><p>vivado安装或者安装gcc-linaro-arm-linux-gnueabihf</p>
+<h3 id="petalinux使用"><a href="#petalinux使用" class="headerlink" title="petalinux使用"></a>petalinux使用</h3><p>创建Block Design并添加ZYNQ Processing System并配置系统<br>拷贝.sdk文件夹到linux系统中（不要放在共享文件夹中）<br>~ /peta_pro<br>petalinux-create<br>petalinux-config进行配置<br>petalinux-config -c kernel<br>petalinux-config -c rootfs<br>petalinux-build</p>
+<h3 id="PL和PS通过bram进行双向通信"><a href="#PL和PS通过bram进行双向通信" class="headerlink" title="PL和PS通过bram进行双向通信"></a>PL和PS通过bram进行双向通信</h3><p>创建AXI Bram Controller 使用自动连接<br>PS双向数据传送<br><a href="https://blog.csdn.net/luhao806/article/details/77909158" target="_blank" rel="noopener">https://blog.csdn.net/luhao806/article/details/77909158</a><br><a href="https://blog.csdn.net/rzjmpb/article/details/50365915#" target="_blank" rel="noopener">https://blog.csdn.net/rzjmpb/article/details/50365915#</a><br>PL自定义AXI总线内核<br>ARM分别往AXI四个寄存器写数字(PL_BRAM_CTRL_mWriteReg(PL_RAM_BASE, 每个寄存器的偏移地址 , 数据))<br>ARM往Bram寄存器写入数据(XBram_WriteReg(XPAR_BRAM_0_BASEADDR, 寄存器偏移地址 , 数据))</p>
+<h3 id="FPGA和PS联合编程"><a href="#FPGA和PS联合编程" class="headerlink" title="FPGA和PS联合编程"></a>FPGA和PS联合编程</h3><p>FPGA使用PS时钟input wire, output wire clk,<br>.v文件作为上层文件调用封装好的版图<br><a href="https://blog.csdn.net/taowei1314520/article/details/77939396" target="_blank" rel="noopener">https://blog.csdn.net/taowei1314520/article/details/77939396</a><br>.v作为模块在工程中<br>工程文件位置Project/Software/RadarBoard/test/Bram4<br>注意修改xdc引脚分配文件<br><a href="https://www.cnblogs.com/pangshian/p/13357433.html" target="_blank" rel="noopener">https://www.cnblogs.com/pangshian/p/13357433.html</a><br><a href="https://bbs.elecfans.com/jishu_485735_1_1.html" target="_blank" rel="noopener">https://bbs.elecfans.com/jishu_485735_1_1.html</a></p>
+<h2 id="调试错误汇总"><a href="#调试错误汇总" class="headerlink" title="调试错误汇总"></a>调试错误汇总</h2><p>插入SD卡不能建立ila核<br>生成U-Boot出现错误Default bitsream is not found, please specify a bitstream file path with –f<br>petalinux-package –boot –fsbl zynqmp_fsbl.elf –u-boot<br>petalinux-package –boot –fsbl zynqmp_fsbl.elf –u-boot –fpga system.bit<br>Xilinx FPGA 中“Done did not go high”</p>
+<p>DONE Pin is not high on target fpga<br>解决方案：在Run Configuration中，勾选Reset entire System和Program FPGA</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/15/webServer/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -178,22 +251,22 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">نُشر في</span>
+              <span class="post-meta-item-text">Veröffentlicht am</span>
 
-              <time title="أُنشأ: 2020-05-15 21:30:43" itemprop="dateCreated datePublished" datetime="2020-05-15T21:30:43+08:00">2020-05-15</time>
+              <time title="Erstellt: 2020-05-15 21:30:43" itemprop="dateCreated datePublished" datetime="2020-05-15T21:30:43+08:00">2020-05-15</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">عُدل في</span>
-                <time title="عُدل: 2020-06-10 23:50:24" itemprop="dateModified" datetime="2020-06-10T23:50:24+08:00">2020-06-10</time>
+                <span class="post-meta-item-text">Bearbeitet am</span>
+                <time title="Geändert am: 2020-06-10 23:50:24" itemprop="dateModified" datetime="2020-06-10T23:50:24+08:00">2020-06-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">في</span>
+              <span class="post-meta-item-text">in</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
                 </span>
@@ -259,16 +332,16 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">نُشر في</span>
+              <span class="post-meta-item-text">Veröffentlicht am</span>
 
-              <time title="أُنشأ: 2020-04-16 22:03:26" itemprop="dateCreated datePublished" datetime="2020-04-16T22:03:26+08:00">2020-04-16</time>
+              <time title="Erstellt: 2020-04-16 22:03:26" itemprop="dateCreated datePublished" datetime="2020-04-16T22:03:26+08:00">2020-04-16</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">عُدل في</span>
-                <time title="عُدل: 2020-07-08 22:06:06" itemprop="dateModified" datetime="2020-07-08T22:06:06+08:00">2020-07-08</time>
+                <span class="post-meta-item-text">Bearbeitet am</span>
+                <time title="Geändert am: 2020-07-08 22:06:06" itemprop="dateModified" datetime="2020-07-08T22:06:06+08:00">2020-07-08</time>
               </span>
 
           
@@ -286,88 +359,7 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/04/16/NasBuild/#more" rel="contents">
-                تابع القراءة &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/14/openwrt/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="XD Lv">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="麦兜">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/14/openwrt/" class="post-title-link" itemprop="url">openwrt</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">نُشر في</span>
-
-              <time title="أُنشأ: 2020-04-14 07:02:24" itemprop="dateCreated datePublished" datetime="2020-04-14T07:02:24+08:00">2020-04-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">عُدل في</span>
-                <time title="عُدل: 2020-05-04 20:59:00" itemprop="dateModified" datetime="2020-05-04T20:59:00+08:00">2020-05-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">في</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/openwrt/" itemprop="url" rel="index"><span itemprop="name">openwrt</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <center>OpenWrt</center>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/04/14/openwrt/#more" rel="contents">
-                تابع القراءة &raquo;
+                Weiterlesen &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -390,7 +382,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="الصفحة التالية"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Nächste Seite"></i></a>
   </nav>
 
 
@@ -434,10 +426,10 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          المحتويات
+          Inhaltsverzeichnis
         </li>
         <li class="sidebar-nav-overview">
-          عام
+          Übersicht
         </li>
       </ul>
 
@@ -456,21 +448,21 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
-          <span class="site-state-item-name">المقالات</span>
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">Artikel</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
         <span class="site-state-item-count">6</span>
-        <span class="site-state-item-name">التصنيفات</span></a>
+        <span class="site-state-item-name">Kategorien</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
         <span class="site-state-item-count">9</span>
-        <span class="site-state-item-name">الوسوم</span></a>
+        <span class="site-state-item-name">schlagwörter</span></a>
       </div>
   </nav>
 </div>
@@ -507,7 +499,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">XD Lv</span>
 </div>
-  <div class="powered-by">تطبيق الموقع <a href="https://github.com/lxdfrank" rel="noopener" target="_blank">XD Lv</a>
+  <div class="powered-by">Erstellt mit  <a href="https://github.com/lxdfrank" rel="noopener" target="_blank">XD Lv</a>
   </div>
 
         
