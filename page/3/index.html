@@ -187,7 +187,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">عُدل في</span>
-                <time title="عُدل: 2020-09-16 10:38:07" itemprop="dateModified" datetime="2020-09-16T10:38:07+08:00">2020-09-16</time>
+                <time title="عُدل: 2020-09-16 11:01:50" itemprop="dateModified" datetime="2020-09-16T11:01:50+08:00">2020-09-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -210,52 +210,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <a id="more"></a>
-
-
-<center>机器学习学习过程中出现的问题</center>
-
-
-
-
-<p>keras和sklearn联合使用</p>
-<p>tensorflow keras 混合编程</p>
-<pre><code class="bash">import tensorflow as tf
-from tensorflow.examples.tutorials.mnist import input_data
-from keras.layers import Input, Dense, Dropout, BatchNormalization,\
-                         LeakyReLU, concatenate,Conv2D, MaxPooling2D,\
-                         AveragePooling2D, GlobalAveragePooling2D,Conv1D,\
-                         Flatten,merge,Reshape,MaxPooling1D,Lambda,LSTM,\
-                         GlobalMaxPooling2D
-
-<span class="comment"># build module</span>
-
-img = tf.placeholder(tf.float32, shape=(None, 784))
-labels = tf.placeholder(tf.float32, shape=(None, 10))
-
-x = Dense(128, activation=<span class="string">'relu'</span>)(img)
-x = Dense(128, activation=<span class="string">'relu'</span>)(x)
-prediction = Dense(10, activation=<span class="string">'softmax'</span>)(x)
-
-loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits=prediction, labels=labels))
-
-train_optim = tf.train.AdamOptimizer().minimize(loss)
-
-mnist_data = input_data.read_data_sets(<span class="string">'MNIST_data/'</span>, one_hot=True)
-
-with tf.Session() as sess:
-    init = tf.global_variables_initializer()
-    sess.run(init)
-    <span class="keyword">for</span> i <span class="keyword">in</span> range(1000):
-        batch_x, batch_y = mnist_data.train.next_batch(50)
-        sess.run(train_optim, feed_dict={img: batch_x, labels: batch_y})
-
-        acc_pred = tf.keras.metrics.categorical_accuracy(labels, prediction)
-        pred = sess.run(acc_pred, feed_dict={labels: mnist_data.test.labels, img: mnist_data.test.images})
-
-        <span class="built_in">print</span>(<span class="string">'accuracy: %.3f'</span> % (sum(pred)/len(mnist_data.test.labels)))</code></pre>
-<h2 id="keras-输出中间层"><a href="#keras-输出中间层" class="headerlink" title="keras 输出中间层"></a><a href="https://blog.csdn.net/tszupup/article/details/89192737" target="_blank" rel="noopener">keras 输出中间层</a></h2><p>1 通过K.function()函数打印模型中间层的输出<br>2 通过函数API打印模型中间层的输出</p>
-
+          <center>机器学习学习过程中出现的问题</center>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/04/03/MachineProblem/#more" rel="contents">
+                تابع القراءة &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -305,7 +268,7 @@ with tf.Session() as sess:
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">عُدل في</span>
-                <time title="عُدل: 2020-09-16 10:37:58" itemprop="dateModified" datetime="2020-09-16T10:37:58+08:00">2020-09-16</time>
+                <time title="عُدل: 2020-09-16 11:01:53" itemprop="dateModified" datetime="2020-09-16T11:01:53+08:00">2020-09-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -328,24 +291,15 @@ with tf.Session() as sess:
     <div class="post-body" itemprop="articleBody">
 
       
-          <a id="more"></a>
-
-<center>深度学习,手势识别</center>
-
-
-<h3 id="CNN卷积神经网络"><a href="#CNN卷积神经网络" class="headerlink" title="CNN卷积神经网络"></a>CNN卷积神经网络</h3><p><a href="https://www.cnblogs.com/ChenKe-cheng/p/10771050.html" target="_blank" rel="noopener">参考链接</a></p>
-<h4 id="一维卷积Conv1d"><a href="#一维卷积Conv1d" class="headerlink" title="一维卷积Conv1d"></a>一维卷积Conv1d</h4><h4 id="二维卷积Conv2d"><a href="#二维卷积Conv2d" class="headerlink" title="二维卷积Conv2d"></a>二维卷积Conv2d</h4><h4 id="三维卷积Conv3d"><a href="#三维卷积Conv3d" class="headerlink" title="三维卷积Conv3d"></a>三维卷积Conv3d</h4><h4 id="融合层Merge-分离层lambda"><a href="#融合层Merge-分离层lambda" class="headerlink" title="融合层Merge 分离层lambda"></a>融合层Merge 分离层lambda</h4><p><a href="https://blog.csdn.net/weixin_44106928/article/details/103129152" target="_blank" rel="noopener">lambda 将Input输入层分隔</a><br><a href="https://keras.io/zh/layers/merge/" target="_blank" rel="noopener">Merge 融合层</a></p>
-<h4 id="ANN"><a href="#ANN" class="headerlink" title="ANN"></a>ANN</h4><h4 id="CNN后面接LSTM"><a href="#CNN后面接LSTM" class="headerlink" title="CNN后面接LSTM"></a>CNN后面接LSTM</h4><h3 id="机器学习指标"><a href="#机器学习指标" class="headerlink" title="机器学习指标"></a>机器学习指标</h3><p>召回率F1</p>
-<h3 id="机器学习算法分类"><a href="#机器学习算法分类" class="headerlink" title="机器学习算法分类"></a>机器学习算法分类</h3><h5 id="TCN"><a href="#TCN" class="headerlink" title="TCN"></a>TCN</h5><!-- more -->
-<h5 id="DenseNet"><a href="#DenseNet" class="headerlink" title="DenseNet"></a>DenseNet</h5><p><a href="https://arxiv.org/abs/1608.06993v3" target="_blank" rel="noopener">论文地址</a></p>
-<p><a href="https://blog.csdn.net/shi2xian2wei2/article/details/84425777" target="_blank" rel="noopener">Keras实现DenseNet结构</a></p>
-<h5 id="LSTM-RNN"><a href="#LSTM-RNN" class="headerlink" title="LSTM RNN"></a>LSTM RNN</h5><h5 id="keras中TimeDistributed的用法"><a href="#keras中TimeDistributed的用法" class="headerlink" title="keras中TimeDistributed的用法"></a>keras中TimeDistributed的用法</h5><p><img src="/2020/03/29/Machinelearning/TimeDistributed.png" alt></p>
-<h5 id="Batch-Normalization"><a href="#Batch-Normalization" class="headerlink" title="Batch Normalization"></a>Batch Normalization</h5><p>作者认为：网络训练过程中参数不断改变导致后续每一层输入的分布也发生变化，<br>而学习的过程又要使每一层适应输入的分布，因此我们不得不降低学习率、小心地初始化。<br>作者将分布发生变化称之为 internal covariate shift。</p>
-<h5 id="GlobalAveragePooling2D层"><a href="#GlobalAveragePooling2D层" class="headerlink" title="GlobalAveragePooling2D层"></a>GlobalAveragePooling2D层</h5><p>就是在卷积层之后，用GAP替代FC全连接层。有两个有点：一是GAP在特征图与最终的分类间转<br>换更加简单自然；二是不像FC层需要大量训练调优的参数，降低了空间参数会使模型更加健壮，抗过拟合效果更佳</p>
-<h5 id="Neual-Network可视化工具"><a href="#Neual-Network可视化工具" class="headerlink" title="Neual Network可视化工具"></a>Neual Network可视化工具</h5><p><a href="https://github.com/raghakot/keras-vis" target="_blank" rel="noopener">keras-vis</a></p>
-<p>什么使用local connected layer，fully connected layer<br>当数据集具有全局的局部特征分布时，也就是说局部特征之间有较强的相关性，适合用全卷积。在不同的区域有不同的特征分布时，适合用local-Conv</p>
-<h3 id="参考书籍"><a href="#参考书籍" class="headerlink" title="参考书籍"></a>参考书籍</h3><p>Deep Learning for Time Series Forecasting<br><a href="https://machinelearningmastery.com/" target="_blank" rel="noopener">该作者网站</a></p>
-
+          <center>深度学习,手势识别</center>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/03/29/Machinelearning/#more" rel="contents">
+                تابع القراءة &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -395,7 +349,7 @@ with tf.Session() as sess:
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">عُدل في</span>
-                <time title="عُدل: 2020-09-16 10:38:27" itemprop="dateModified" datetime="2020-09-16T10:38:27+08:00">2020-09-16</time>
+                <time title="عُدل: 2020-09-16 11:01:40" itemprop="dateModified" datetime="2020-09-16T11:01:40+08:00">2020-09-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">

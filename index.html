@@ -187,7 +187,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">عُدل في</span>
-                <time title="عُدل: 2020-09-16 10:58:30" itemprop="dateModified" datetime="2020-09-16T10:58:30+08:00">2020-09-16</time>
+                <time title="عُدل: 2020-09-16 11:02:18" itemprop="dateModified" datetime="2020-09-16T11:02:18+08:00">2020-09-16</time>
               </span>
 
           
@@ -201,17 +201,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <a id="more"></a>
-
-<h2 id="教程系列"><a href="#教程系列" class="headerlink" title="教程系列"></a>教程系列</h2><h3 id="Ubuntu环境安装"><a href="#Ubuntu环境安装" class="headerlink" title="Ubuntu环境安装"></a>Ubuntu环境安装</h3><p>双向文件传输 共享文件夹 复制拖拽 增强工具安装<br>增强工具第一次安装不上可以弹出iso重新安装<br>可设置ubuntu熄屏时间</p>
-<h3 id="petalinux安装"><a href="#petalinux安装" class="headerlink" title="petalinux安装"></a>petalinux安装</h3><p>设置安装路径 /opt/pkg/petalinux<br>petalinux-v2017.4-final-installer.run  /文件夹</p>
-<h3 id="linux-vivado安装"><a href="#linux-vivado安装" class="headerlink" title="linux vivado安装"></a>linux vivado安装</h3><p>vivado安装或者安装gcc-linaro-arm-linux-gnueabihf</p>
-<h3 id="petalinux使用"><a href="#petalinux使用" class="headerlink" title="petalinux使用"></a>petalinux使用</h3><p>创建Block Design并添加ZYNQ Processing System并配置系统<br>拷贝.sdk文件夹到linux系统中（不要放在共享文件夹中）<br>~ /peta_pro<br>petalinux-create<br>petalinux-config进行配置<br>petalinux-config -c kernel<br>petalinux-config -c rootfs<br>petalinux-build</p>
-<h3 id="PL和PS通过bram进行双向通信"><a href="#PL和PS通过bram进行双向通信" class="headerlink" title="PL和PS通过bram进行双向通信"></a>PL和PS通过bram进行双向通信</h3><p>创建AXI Bram Controller 使用自动连接<br>PS双向数据传送<br><a href="https://blog.csdn.net/luhao806/article/details/77909158" target="_blank" rel="noopener">https://blog.csdn.net/luhao806/article/details/77909158</a><br><a href="https://blog.csdn.net/rzjmpb/article/details/50365915#" target="_blank" rel="noopener">https://blog.csdn.net/rzjmpb/article/details/50365915#</a><br>PL自定义AXI总线内核<br>ARM分别往AXI四个寄存器写数字(PL_BRAM_CTRL_mWriteReg(PL_RAM_BASE, 每个寄存器的偏移地址 , 数据))<br>ARM往Bram寄存器写入数据(XBram_WriteReg(XPAR_BRAM_0_BASEADDR, 寄存器偏移地址 , 数据))</p>
-<h3 id="FPGA和PS联合编程"><a href="#FPGA和PS联合编程" class="headerlink" title="FPGA和PS联合编程"></a>FPGA和PS联合编程</h3><p>FPGA使用PS时钟input wire, output wire clk,<br>.v文件作为上层文件调用封装好的版图<br><a href="https://blog.csdn.net/taowei1314520/article/details/77939396" target="_blank" rel="noopener">https://blog.csdn.net/taowei1314520/article/details/77939396</a><br>.v作为模块在工程中<br>工程文件位置Project/Software/RadarBoard/test/Bram4<br>注意修改xdc引脚分配文件<br><a href="https://www.cnblogs.com/pangshian/p/13357433.html" target="_blank" rel="noopener">https://www.cnblogs.com/pangshian/p/13357433.html</a><br><a href="https://bbs.elecfans.com/jishu_485735_1_1.html" target="_blank" rel="noopener">https://bbs.elecfans.com/jishu_485735_1_1.html</a></p>
-<h2 id="调试错误汇总"><a href="#调试错误汇总" class="headerlink" title="调试错误汇总"></a>调试错误汇总</h2><p>插入SD卡不能建立ila核<br>生成U-Boot出现错误Default bitsream is not found, please specify a bitstream file path with –f<br>petalinux-package –boot –fsbl zynqmp_fsbl.elf –u-boot<br>petalinux-package –boot –fsbl zynqmp_fsbl.elf –u-boot –fpga system.bit<br>Xilinx FPGA 中“Done did not go high”</p>
-<p>DONE Pin is not high on target fpga<br>解决方案：在Run Configuration中，勾选Reset entire System和Program FPGA</p>
-
+          <h2 id="教程系列"><a href="#教程系列" class="headerlink" title="教程系列"></a>教程系列</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/09/12/Xilinx/#more" rel="contents">
+                تابع القراءة &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -261,7 +259,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">عُدل في</span>
-                <time title="عُدل: 2020-09-16 10:38:35" itemprop="dateModified" datetime="2020-09-16T10:38:35+08:00">2020-09-16</time>
+                <time title="عُدل: 2020-09-16 11:01:27" itemprop="dateModified" datetime="2020-09-16T11:01:27+08:00">2020-09-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -284,17 +282,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <a id="more"></a>
-
-<center>搭建web服务器</center>
-
-<p><a href="https://blog.csdn.net/fzk0813/article/details/90644970" target="_blank" rel="noopener">嵌入式web服务器</a><br>嵌入式WEB服务器常见的有：Lighttpd, Shttpd, Thttpd, Boa, Mini_httpd, Appweb, Goahead<br><a href="https://www.jianshu.com/p/271a1649a853" target="_blank" rel="noopener">阿里云服务器上安装hexo服务器</a></p>
-<center>本地文件上传VPS</center>
-
-<h3 id="server端"><a href="#server端" class="headerlink" title="server端"></a>server端</h3><p>#!/usr/bin/env python3<br>#-<em>- coding: utf-8 -</em><br><strong>author</strong> = ‘Xiaodong Lv’<br>from collections import deque<br>from threading import Lock, Thread<br>import threading<br>import socket<br>import time<br>import os</p>
-<p>def main():<br>    address = (‘本地公网IP’,31508)<br>    server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)  #SOCK_DGRAM UDP  SOCK_STREAM TCP<br>    server.bind(address)<br>    while True:<br>        ra,client_addr = server.recvfrom(10)<br>        print(ra,client_addr)<br>if <strong>name</strong> == ‘<strong>main</strong>‘:<br>    main()</p>
-<h3 id="client端"><a href="#client端" class="headerlink" title="client端"></a>client端</h3><p>#!/usr/bin/env python3<br>#-<em>- coding: utf-8 -</em>-<br>import socket<br>import sys, getopt<br>def main():<br>    address = (‘阿里云公网IP’,31508)<br>    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)<br>    while True:<br>        inputDATA = input(“please input send data:”)<br>        if inputDATA==’’:<br>            break<br>        else:<br>            inputDATA = str(inputDATA)<br>            s.sendto(inputDATA.encode(),address)<br>            print(inputDATA)<br>    s.close()<br>if <strong>name</strong> == “<strong>main</strong>“:<br>   main()</p>
-
+          <center>搭建web服务器</center>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/15/webServer/#more" rel="contents">
+                تابع القراءة &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -344,7 +340,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">عُدل في</span>
-                <time title="عُدل: 2020-09-16 10:38:13" itemprop="dateModified" datetime="2020-09-16T10:38:13+08:00">2020-09-16</time>
+                <time title="عُدل: 2020-09-16 11:01:47" itemprop="dateModified" datetime="2020-09-16T11:01:47+08:00">2020-09-16</time>
               </span>
 
           
@@ -358,16 +354,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <a id="more"></a>
-
-<center>NasBuild</center>
-
-
-
-<p>Linux配置内网DNS、域名解析<br>配置方式，<br>1）cat /etc/hosts 使用host文件的方式<br>2）使用 /etc/resolv.conf 配置dns服务器。</p>
-<p>windows<br>在C:\Windows\System32\drivers\etc\hosts文件中添加<br>127.0.0.1 xxx.xxx.xxx(指定域名)<br>这样在访问xxx.xxx.xxx时即会访问127.0.0.1地址，只在局域网有效</p>
-<p><a href="https://www.cnblogs.com/thinkinglife/p/5232503.html" target="_blank" rel="noopener">Openwrt + Samba</a><br><a href="https://www.jianshu.com/p/3d9cd81d5207" target="_blank" rel="noopener">Openwrt挂在USB</a></p>
-
+          <center>NasBuild</center>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/04/16/NasBuild/#more" rel="contents">
+                تابع القراءة &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
