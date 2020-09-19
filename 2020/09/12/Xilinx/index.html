@@ -27,7 +27,7 @@
 <meta property="og:site_name" content="麦兜">
 <meta property="og:description" content="教程系列">
 <meta property="article:published_time" content="2020-09-12T08:56:29.000Z">
-<meta property="article:modified_time" content="2020-09-16T19:14:56.608Z">
+<meta property="article:modified_time" content="2020-09-19T07:14:17.760Z">
 <meta property="article:author" content="XD Lv">
 <meta name="twitter:card" content="summary">
 
@@ -84,7 +84,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
+    <div class="toggle" aria-label="تشغيل شريط التصفح">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -118,17 +118,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>الوسوم</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>التصنيفات</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>الأرشيفات</a>
 
   </li>
   </ul>
@@ -181,16 +181,16 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">نُشر في</span>
 
-              <time title="Created: 2020-09-12 16:56:29" itemprop="dateCreated datePublished" datetime="2020-09-12T16:56:29+08:00">2020-09-12</time>
+              <time title="أُنشأ: 2020-09-12 16:56:29" itemprop="dateCreated datePublished" datetime="2020-09-12T16:56:29+08:00">2020-09-12</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-09-17 03:14:56" itemprop="dateModified" datetime="2020-09-17T03:14:56+08:00">2020-09-17</time>
+                <span class="post-meta-item-text">عُدل في</span>
+                <time title="عُدل: 2020-09-19 15:14:17" itemprop="dateModified" datetime="2020-09-19T15:14:17+08:00">2020-09-19</time>
               </span>
 
           
@@ -206,12 +206,13 @@
       
         <h2 id="教程系列"><a href="#教程系列" class="headerlink" title="教程系列"></a>教程系列</h2><a id="more"></a>
 <h3 id="Ubuntu环境安装"><a href="#Ubuntu环境安装" class="headerlink" title="Ubuntu环境安装"></a>Ubuntu环境安装</h3><p>双向文件传输 共享文件夹 复制拖拽 增强工具安装<br>增强工具第一次安装不上可以弹出iso重新安装<br>可设置ubuntu熄屏时间</p>
-<h3 id="petalinux安装"><a href="#petalinux安装" class="headerlink" title="petalinux安装"></a>petalinux安装</h3><p>设置安装路径 /opt/pkg/petalinux<br>petalinux-v2017.4-final-installer.run  /文件夹</p>
-<h3 id="linux-vivado安装"><a href="#linux-vivado安装" class="headerlink" title="linux vivado安装"></a>linux vivado安装</h3><p>vivado安装或者安装gcc-linaro-arm-linux-gnueabihf</p>
-<h3 id="petalinux使用"><a href="#petalinux使用" class="headerlink" title="petalinux使用"></a>petalinux使用</h3><p>开启编译环境：source /opt/Xilinx/Vivado/2017.4/settings64.sh<br>开启系统环境：source /opt/pkg/petalinux/settings.sh<br>创建Block Design并添加ZYNQ Processing System并配置系统<br>拷贝.sdk文件夹到linux系统中（不要放在共享文件夹中）<br>~ /peta_pro<br>petalinux-create<br>petalinux-config进行配置<br>petalinux-config -c kernel<br>petalinux-config -c rootfs<br>petalinux-build</p>
-<h4 id="移植Vivado生成的硬件程序到petalinux"><a href="#移植Vivado生成的硬件程序到petalinux" class="headerlink" title="移植Vivado生成的硬件程序到petalinux"></a>移植Vivado生成的硬件程序到petalinux</h4><p>在linux工作空间中创建工作目录<br>复制生成的.sdk文件夹到linux工作目录(可以在同一个工程下面选择同的sdk文件进行内核配置，这样可能节省内核配置时间)<br>执行创建工程petalinux-create –type project –template zynq –name Radar_peta<br>petalinux-config –get-hw-description ../Bram5.sdk<br>petalinux-config -c kernel<br>petalinux-config -c rootfs<br>petalinux-build<br>petalinux-package –boot –fsbl ./images/linux/zynq_fsbl.elf –fpga –uboot –force<br>复制images/linux文件夹下面的UBOOT.bin和image.ub文件到SD卡</p>
-<h4 id="petalinux应用程序编译"><a href="#petalinux应用程序编译" class="headerlink" title="petalinux应用程序编译"></a>petalinux应用程序编译</h4><p>配置ip使用scp进行文件传输</p>
-<h4 id="petalinux中断使用"><a href="#petalinux中断使用" class="headerlink" title="petalinux中断使用"></a>petalinux中断使用</h4><p>先生成硬件文件，直接修改设备树，编写设备驱动，<br><a href="https://blog.csdn.net/seavensky_curry/article/details/82978475" target="_blank" rel="noopener">https://blog.csdn.net/seavensky_curry/article/details/82978475</a><br>编译驱动<a href="https://blog.csdn.net/weixin_43873379/article/details/102625054" target="_blank" rel="noopener">https://blog.csdn.net/weixin_43873379/article/details/102625054</a></p>
+<h3 id="petalinux安装（需要和vivado版本对应）"><a href="#petalinux安装（需要和vivado版本对应）" class="headerlink" title="petalinux安装（需要和vivado版本对应）"></a>petalinux安装（需要和vivado版本对应）</h3><p>设置安装路径 /opt/pkg/petalinux<br>petalinux-v2017.4-final-installer.run  /文件夹</p>
+<h3 id="linux-vivado安装（需要和petalinux版本对应）"><a href="#linux-vivado安装（需要和petalinux版本对应）" class="headerlink" title="linux vivado安装（需要和petalinux版本对应）"></a>linux vivado安装（需要和petalinux版本对应）</h3><p>vivado安装或者安装gcc-linaro-arm-linux-gnueabihf</p>
+<h3 id="petalinux使用"><a href="#petalinux使用" class="headerlink" title="petalinux使用"></a>petalinux使用</h3><p>开启编译环境：source /opt/Xilinx/Vivado/2017.4/settings64.sh<br>开启系统环境：source /opt/pkg/petalinux/settings.sh<br>创建Block Design并添加ZYNQ Processing System并配置系统<br>拷贝.sdk文件夹到linux系统中（不要放在共享文件夹中）<br>~ /peta_pro<br>petalinux-create<br>petalinux-config 进行配置<br>petalinux-config -c kernel<br>petalinux-config -c rootfs<br>petalinux-build</p>
+<h4 id="移植Vivado生成的硬件程序到petalinux"><a href="#移植Vivado生成的硬件程序到petalinux" class="headerlink" title="移植Vivado生成的硬件程序到petalinux"></a>移植Vivado生成的硬件程序到petalinux</h4><p>在linux工作空间中创建工作目录<br>复制生成的.sdk文件夹到linux工作目录(可以在同一个工程下面选择同的sdk文件进行内核配置，这样可能节省内核配置时间)<br>执行创建工程petalinux-create –type project –template zynq –name Radar_peta<br>petalinux-config –get-hw-description ../Bram5.sdk<br>petalinux-config -c kernel<br>petalinux-config -c rootfs<br>自定义设备树<br>sudo gedit project-spec/meta-user/recipes-bsp/device-tree/files/system-user.dtsi<br>petalinux-build<br>petalinux-package –boot –fsbl ./images/linux/zynq_fsbl.elf –fpga –uboot –force<br>复制images/linux文件夹下面的UBOOT.bin和image.ub文件到SD卡</p>
+<h3 id="内核移植"><a href="#内核移植" class="headerlink" title="内核移植"></a>内核移植</h3><h4 id="内核移植编译"><a href="#内核移植编译" class="headerlink" title="内核移植编译"></a>内核移植编译</h4><p>make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- distclean<br>make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- xilinx_zynq_defconfig make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- menuconfig<br>make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- all -j16</p>
+<h4 id="petalinux应用程序编译"><a href="#petalinux应用程序编译" class="headerlink" title="petalinux应用程序编译"></a>petalinux应用程序编译</h4><p>配置ip使用scp进行文件传输<br>设备树自动生成注意查看其地址 pl.dtsi在创建的工程中<br>控制led<br><a href="https://blog.csdn.net/leon_zeng0/article/details/84172584" target="_blank" rel="noopener">https://blog.csdn.net/leon_zeng0/article/details/84172584</a><br><a href="https://blog.csdn.net/u013029731/article/details/85042431" target="_blank" rel="noopener">https://blog.csdn.net/u013029731/article/details/85042431</a><br>/dev/mem/<br><a href="https://www.cnblogs.com/cxchanpin/p/7230743.html" target="_blank" rel="noopener">https://www.cnblogs.com/cxchanpin/p/7230743.html</a></p>
+<h4 id="petalinux中断使用"><a href="#petalinux中断使用" class="headerlink" title="petalinux中断使用"></a>petalinux中断使用</h4><p>先生成硬件文件，直接修改设备树，编写设备驱动，<br><a href="https://blog.csdn.net/seavensky_curry/article/details/82978475" target="_blank" rel="noopener">https://blog.csdn.net/seavensky_curry/article/details/82978475</a><br>编译驱动<a href="https://blog.csdn.net/weixin_43873379/article/details/102625054" target="_blank" rel="noopener">https://blog.csdn.net/weixin_43873379/article/details/102625054</a><br>modprobe和insmod加载设备驱动<br>创建设备节点<br>解压内核到ubuntu中并编译内核，要不驱动没法编译，将例程中的linux移植到ubuntu中<br>在petalinux-config</p>
 <h3 id="PL和PS通过bram进行双向通信"><a href="#PL和PS通过bram进行双向通信" class="headerlink" title="PL和PS通过bram进行双向通信"></a>PL和PS通过bram进行双向通信</h3><p>创建AXI Bram Controller 使用自动连接<br>PS双向数据传送<br>文件位置Bram5双向PSBram<br><a href="https://blog.csdn.net/luhao806/article/details/77909158" target="_blank" rel="noopener">https://blog.csdn.net/luhao806/article/details/77909158</a><br><a href="https://blog.csdn.net/rzjmpb/article/details/50365915#" target="_blank" rel="noopener">https://blog.csdn.net/rzjmpb/article/details/50365915#</a><br>PL自定义AXI总线内核<br>ARM分别往AXI四个寄存器写数字(PL_BRAM_CTRL_mWriteReg(PL_RAM_BASE, 每个寄存器的偏移地址 , 数据))<br>ARM往Bram寄存器写入数据(XBram_WriteReg(XPAR_BRAM_0_BASEADDR, 寄存器偏移地址 , 数据))<br><a href="https://www.amobbs.com/thread-5737330-1-1.html" target="_blank" rel="noopener">https://www.amobbs.com/thread-5737330-1-1.html</a><br><a href="https://blog.csdn.net/botao_li/article/details/86301995" target="_blank" rel="noopener">https://blog.csdn.net/botao_li/article/details/86301995</a></p>
 <h3 id="FPGA和PS联合编程"><a href="#FPGA和PS联合编程" class="headerlink" title="FPGA和PS联合编程"></a>FPGA和PS联合编程</h3><p>FPGA使用PS时钟input wire, output wire clk,<br>.v文件作为上层文件调用封装好的版图<br><a href="https://blog.csdn.net/taowei1314520/article/details/77939396" target="_blank" rel="noopener">https://blog.csdn.net/taowei1314520/article/details/77939396</a><br>.v作为模块在工程中<br>工程文件位置Project/Software/RadarBoard/test/Bram4<br>注意修改xdc引脚分配文件<br><a href="https://www.cnblogs.com/pangshian/p/13357433.html" target="_blank" rel="noopener">https://www.cnblogs.com/pangshian/p/13357433.html</a><br><a href="https://bbs.elecfans.com/jishu_485735_1_1.html" target="_blank" rel="noopener">https://bbs.elecfans.com/jishu_485735_1_1.html</a></p>
 <h3 id="PL和PS数据交互方式及其优缺点"><a href="#PL和PS数据交互方式及其优缺点" class="headerlink" title="PL和PS数据交互方式及其优缺点"></a>PL和PS数据交互方式及其优缺点</h3><p>常用的PL和PS数据交互方式根据交互数据量的大小有以下几种方式：<br>1、bit或Byte级别的交互，常用于设备状态交互<br>使用ram，AXI，RAM操作复杂，AXI操作简单，速度更快<br>2、100MB以下的数据交互<br>使用RAM，目前本人可以达到90MB<br>3、200MB以下的数据交互<br>使用AXIDMA进行数据交互，ZYNQ最快可以达到400M，本人使用US+，目前只能达到220M，如果PS端在DMA后端使用乒乓接受，应该速率更快，没有看到官方文档里面标注US+的AXIDMA最高速率<br>4、500M以上的数交互<br>使用HP总线，单个通道可以达到1GB。</p>
@@ -220,6 +221,7 @@
 <p>DONE Pin is not high on target fpga<br>解决方案：在Run Configuration中，勾选Reset entire System和Program FPGA</p>
 <p>Genetate Block Design的时候出现有地址没有配置<br>解决方案：打开Address Editor选择Auto Assign Address</p>
 <p>[IP_Flow 19-3153] Bus Interface ‘clk’: ASSOCIATED_BUSIF bus parameter is missing.<br>Ports and Interfaces-&gt;BRAM_PORT右击-&gt;Auto Infer Interface Chooser</p>
+<p>Your display is too small to run Menuconfig!It must be at least 19 lines by 80 columns.<br>Your display is too small to run Menuconfig!<br>It must be at least 19 lines by 80 columns.</p>
 
     </div>
 
@@ -229,7 +231,7 @@
         <div class="reward-container">
   <div>坚持原创技术分享，您的支持将鼓励我继续创作!</div>
   <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
-    Donate
+    تبرّع
   </button>
   <div id="qr" style="display: none;">
       
@@ -304,16 +306,16 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          Table of Contents
+          المحتويات
         </li>
         <li class="sidebar-nav-overview">
-          Overview
+          عام
         </li>
       </ul>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#教程系列"><span class="nav-number">1.</span> <span class="nav-text">教程系列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ubuntu环境安装"><span class="nav-number">1.1.</span> <span class="nav-text">Ubuntu环境安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#petalinux安装"><span class="nav-number">1.2.</span> <span class="nav-text">petalinux安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linux-vivado安装"><span class="nav-number">1.3.</span> <span class="nav-text">linux vivado安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#petalinux使用"><span class="nav-number">1.4.</span> <span class="nav-text">petalinux使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#移植Vivado生成的硬件程序到petalinux"><span class="nav-number">1.4.1.</span> <span class="nav-text">移植Vivado生成的硬件程序到petalinux</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#petalinux应用程序编译"><span class="nav-number">1.4.2.</span> <span class="nav-text">petalinux应用程序编译</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#petalinux中断使用"><span class="nav-number">1.4.3.</span> <span class="nav-text">petalinux中断使用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PL和PS通过bram进行双向通信"><span class="nav-number">1.5.</span> <span class="nav-text">PL和PS通过bram进行双向通信</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FPGA和PS联合编程"><span class="nav-number">1.6.</span> <span class="nav-text">FPGA和PS联合编程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PL和PS数据交互方式及其优缺点"><span class="nav-number">1.7.</span> <span class="nav-text">PL和PS数据交互方式及其优缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用到的参考链接"><span class="nav-number">1.8.</span> <span class="nav-text">用到的参考链接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调试错误汇总"><span class="nav-number">2.</span> <span class="nav-text">调试错误汇总</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#教程系列"><span class="nav-number">1.</span> <span class="nav-text">教程系列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ubuntu环境安装"><span class="nav-number">1.1.</span> <span class="nav-text">Ubuntu环境安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#petalinux安装（需要和vivado版本对应）"><span class="nav-number">1.2.</span> <span class="nav-text">petalinux安装（需要和vivado版本对应）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linux-vivado安装（需要和petalinux版本对应）"><span class="nav-number">1.3.</span> <span class="nav-text">linux vivado安装（需要和petalinux版本对应）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#petalinux使用"><span class="nav-number">1.4.</span> <span class="nav-text">petalinux使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#移植Vivado生成的硬件程序到petalinux"><span class="nav-number">1.4.1.</span> <span class="nav-text">移植Vivado生成的硬件程序到petalinux</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内核移植"><span class="nav-number">1.5.</span> <span class="nav-text">内核移植</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#内核移植编译"><span class="nav-number">1.5.1.</span> <span class="nav-text">内核移植编译</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#petalinux应用程序编译"><span class="nav-number">1.5.2.</span> <span class="nav-text">petalinux应用程序编译</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#petalinux中断使用"><span class="nav-number">1.5.3.</span> <span class="nav-text">petalinux中断使用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PL和PS通过bram进行双向通信"><span class="nav-number">1.6.</span> <span class="nav-text">PL和PS通过bram进行双向通信</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FPGA和PS联合编程"><span class="nav-number">1.7.</span> <span class="nav-text">FPGA和PS联合编程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PL和PS数据交互方式及其优缺点"><span class="nav-number">1.8.</span> <span class="nav-text">PL和PS数据交互方式及其优缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用到的参考链接"><span class="nav-number">1.9.</span> <span class="nav-text">用到的参考链接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调试错误汇总"><span class="nav-number">2.</span> <span class="nav-text">调试错误汇总</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -328,20 +330,20 @@
           <a href="/archives/">
         
           <span class="site-state-item-count">10</span>
-          <span class="site-state-item-name">posts</span>
+          <span class="site-state-item-name">المقالات</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
         <span class="site-state-item-count">6</span>
-        <span class="site-state-item-name">categories</span></a>
+        <span class="site-state-item-name">التصنيفات</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
         <span class="site-state-item-count">9</span>
-        <span class="site-state-item-name">tags</span></a>
+        <span class="site-state-item-name">الوسوم</span></a>
       </div>
   </nav>
 </div>
@@ -378,7 +380,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">XD Lv</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://github.com/lxdfrank" rel="noopener" target="_blank">XD Lv</a>
+  <div class="powered-by">تطبيق الموقع <a href="https://github.com/lxdfrank" rel="noopener" target="_blank">XD Lv</a>
   </div>
 
         
