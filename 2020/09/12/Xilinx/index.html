@@ -27,7 +27,7 @@
 <meta property="og:site_name" content="麦兜">
 <meta property="og:description" content="教程系列">
 <meta property="article:published_time" content="2020-09-12T08:56:29.000Z">
-<meta property="article:modified_time" content="2020-09-21T01:58:23.715Z">
+<meta property="article:modified_time" content="2020-09-23T04:32:04.000Z">
 <meta property="article:author" content="XD Lv">
 <meta name="twitter:card" content="summary">
 
@@ -84,7 +84,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="تشغيل شريط التصفح">
+    <div class="toggle" aria-label="Navigationsleiste an/ausschalten">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -113,22 +113,22 @@
   <ul id="menu" class="menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Startseite</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>الوسوم</a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Schlagwörter</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>التصنيفات</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Kategorien</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>الأرشيفات</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archiv</a>
 
   </li>
   </ul>
@@ -181,16 +181,16 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">نُشر في</span>
+              <span class="post-meta-item-text">Veröffentlicht am</span>
 
-              <time title="أُنشأ: 2020-09-12 16:56:29" itemprop="dateCreated datePublished" datetime="2020-09-12T16:56:29+08:00">2020-09-12</time>
+              <time title="Erstellt: 2020-09-12 16:56:29" itemprop="dateCreated datePublished" datetime="2020-09-12T16:56:29+08:00">2020-09-12</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">عُدل في</span>
-                <time title="عُدل: 2020-09-21 09:58:23" itemprop="dateModified" datetime="2020-09-21T09:58:23+08:00">2020-09-21</time>
+                <span class="post-meta-item-text">Bearbeitet am</span>
+                <time title="Geändert am: 2020-09-23 12:32:04" itemprop="dateModified" datetime="2020-09-23T12:32:04+08:00">2020-09-23</time>
               </span>
 
           
@@ -216,6 +216,7 @@
 <p>最终参考版本<br><a href="https://blog.csdn.net/qq_30307853/article/details/100513971" target="_blank" rel="noopener">https://blog.csdn.net/qq_30307853/article/details/100513971</a></p>
 <h3 id="PL和PS通过bram进行双向通信"><a href="#PL和PS通过bram进行双向通信" class="headerlink" title="PL和PS通过bram进行双向通信"></a>PL和PS通过bram进行双向通信</h3><p>创建AXI Bram Controller 使用自动连接<br>PS双向数据传送<br>文件位置Bram5双向PSBram<br><a href="https://blog.csdn.net/luhao806/article/details/77909158" target="_blank" rel="noopener">https://blog.csdn.net/luhao806/article/details/77909158</a><br><a href="https://blog.csdn.net/rzjmpb/article/details/50365915#" target="_blank" rel="noopener">https://blog.csdn.net/rzjmpb/article/details/50365915#</a><br>PL自定义AXI总线内核<br>ARM分别往AXI四个寄存器写数字(PL_BRAM_CTRL_mWriteReg(PL_RAM_BASE, 每个寄存器的偏移地址 , 数据))<br>ARM往Bram寄存器写入数据(XBram_WriteReg(XPAR_BRAM_0_BASEADDR, 寄存器偏移地址 , 数据))<br><a href="https://www.amobbs.com/thread-5737330-1-1.html" target="_blank" rel="noopener">https://www.amobbs.com/thread-5737330-1-1.html</a><br><a href="https://blog.csdn.net/botao_li/article/details/86301995" target="_blank" rel="noopener">https://blog.csdn.net/botao_li/article/details/86301995</a></p>
 <h3 id="FPGA和PS联合编程"><a href="#FPGA和PS联合编程" class="headerlink" title="FPGA和PS联合编程"></a>FPGA和PS联合编程</h3><p>FPGA使用PS时钟input wire, output wire clk,<br>.v文件作为上层文件调用封装好的版图<br><a href="https://blog.csdn.net/taowei1314520/article/details/77939396" target="_blank" rel="noopener">https://blog.csdn.net/taowei1314520/article/details/77939396</a><br>.v作为模块在工程中<br>工程文件位置Project/Software/RadarBoard/test/Bram4<br>注意修改xdc引脚分配文件<br><a href="https://www.cnblogs.com/pangshian/p/13357433.html" target="_blank" rel="noopener">https://www.cnblogs.com/pangshian/p/13357433.html</a><br><a href="https://bbs.elecfans.com/jishu_485735_1_1.html" target="_blank" rel="noopener">https://bbs.elecfans.com/jishu_485735_1_1.html</a></p>
+<h3 id="petalinux中断最终版"><a href="#petalinux中断最终版" class="headerlink" title="petalinux中断最终版"></a>petalinux中断最终版</h3><h4 id="PL硬件设计编写SDK测试文件确定"><a href="#PL硬件设计编写SDK测试文件确定" class="headerlink" title="PL硬件设计编写SDK测试文件确定"></a>PL硬件设计编写SDK测试文件确定</h4><p>创建keyirq工程</p>
 <h3 id="PL和PS数据交互方式及其优缺点"><a href="#PL和PS数据交互方式及其优缺点" class="headerlink" title="PL和PS数据交互方式及其优缺点"></a>PL和PS数据交互方式及其优缺点</h3><p>常用的PL和PS数据交互方式根据交互数据量的大小有以下几种方式：<br>1、bit或Byte级别的交互，常用于设备状态交互<br>使用ram，AXI，RAM操作复杂，AXI操作简单，速度更快<br>2、100MB以下的数据交互<br>使用RAM，目前本人可以达到90MB<br>3、200MB以下的数据交互<br>使用AXIDMA进行数据交互，ZYNQ最快可以达到400M，本人使用US+，目前只能达到220M，如果PS端在DMA后端使用乒乓接受，应该速率更快，没有看到官方文档里面标注US+的AXIDMA最高速率<br>4、500M以上的数交互<br>使用HP总线，单个通道可以达到1GB。</p>
 <h3 id="用到的参考链接"><a href="#用到的参考链接" class="headerlink" title="用到的参考链接"></a>用到的参考链接</h3><p>AXI PS PL数据通信<br>bram和ram 以及DDR的优缺点<br><a href="https://blog.csdn.net/qq_31806049/article/details/99428777" target="_blank" rel="noopener">https://blog.csdn.net/qq_31806049/article/details/99428777</a><br>linux读写bram数据<br><a href="https://blog.csdn.net/yohe12/article/details/105264853" target="_blank" rel="noopener">https://blog.csdn.net/yohe12/article/details/105264853</a><br><a href="https://blog.csdn.net/STR618/article/details/84728869" target="_blank" rel="noopener">https://blog.csdn.net/STR618/article/details/84728869</a><br>PL端读写bram<br><a href="https://blog.csdn.net/weixin_43941525/article/details/90408941" target="_blank" rel="noopener">https://blog.csdn.net/weixin_43941525/article/details/90408941</a><br>xilinx github：<a href="https://github.com/Xilinx" target="_blank" rel="noopener">https://github.com/Xilinx</a><br>PL读写DDR：<br><a href="https://blog.csdn.net/weixin_36474809/article/details/85111550" target="_blank" rel="noopener">https://blog.csdn.net/weixin_36474809/article/details/85111550</a><br>Linux下运行PL程序<br><a href="https://forums.xilinx.com/t5/嵌入式-工具-软件开发/petalinux-2018-3在PS中配置PL导致PS无响应/td-p/1046828" target="_blank" rel="noopener">https://forums.xilinx.com/t5/嵌入式-工具-软件开发/petalinux-2018-3在PS中配置PL导致PS无响应/td-p/1046828</a><br><a href="https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/18841847/Solution+ZynqMP+PL+Programming#SolutionZynqMPPLProgramming-BitstreamFormatsBitstream" target="_blank" rel="noopener">https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/18841847/Solution+ZynqMP+PL+Programming#SolutionZynqMPPLProgramming-BitstreamFormatsBitstream</a><br><a href="https://www.xilinx.com/support/documentation/ip_documentation/axi_ref_guide/latest/ug1037-vivado-axi-reference-guide.pdf" target="_blank" rel="noopener">https://www.xilinx.com/support/documentation/ip_documentation/axi_ref_guide/latest/ug1037-vivado-axi-reference-guide.pdf</a><br>PS PL双向通信<br><a href="https://blog.csdn.net/botao_li/article/details/86301995" target="_blank" rel="noopener">https://blog.csdn.net/botao_li/article/details/86301995</a><br>创建AXI总线<br><a href="https://www.cnblogs.com/limanjihe/p/9885014.html" target="_blank" rel="noopener">https://www.cnblogs.com/limanjihe/p/9885014.html</a></p>
 <h2 id="调试错误汇总"><a href="#调试错误汇总" class="headerlink" title="调试错误汇总"></a>调试错误汇总</h2><p>插入SD卡不能建立ila核<br>生成U-Boot出现错误Default bitsream is not found, please specify a bitstream file path with –f<br>petalinux-package –boot –fsbl zynqmp_fsbl.elf –u-boot<br>petalinux-package –boot –fsbl zynqmp_fsbl.elf –u-boot –fpga system.bit<br>Xilinx FPGA 中“Done did not go high”</p>
@@ -233,13 +234,13 @@
         <div class="reward-container">
   <div>坚持原创技术分享，您的支持将鼓励我继续创作!</div>
   <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
-    تبرّع
+    Spenden
   </button>
   <div id="qr" style="display: none;">
       
       <div style="display: inline-block;">
-        <img src="/images/wechatpay.png" alt="XD Lv WeChat Pay">
-        <p>WeChat Pay</p>
+        <img src="/images/wechatpay.png" alt="XD Lv WeChat Bezahlung">
+        <p>WeChat Bezahlung</p>
       </div>
 
   </div>
@@ -257,7 +258,10 @@
     <a href="/2020/05/15/webServer/" rel="prev" title="webServer">
       <i class="fa fa-chevron-left"></i> webServer
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/09/23/MotorImagery/" rel="next" title="MotorImagery">
+      MotorImagery <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -308,16 +312,16 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          المحتويات
+          Inhaltsverzeichnis
         </li>
         <li class="sidebar-nav-overview">
-          عام
+          Übersicht
         </li>
       </ul>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#教程系列"><span class="nav-number">1.</span> <span class="nav-text">教程系列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ubuntu环境安装"><span class="nav-number">1.1.</span> <span class="nav-text">Ubuntu环境安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#petalinux安装（需要和vivado版本对应）"><span class="nav-number">1.2.</span> <span class="nav-text">petalinux安装（需要和vivado版本对应）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linux-vivado安装（需要和petalinux版本对应）"><span class="nav-number">1.3.</span> <span class="nav-text">linux vivado安装（需要和petalinux版本对应）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#petalinux使用"><span class="nav-number">1.4.</span> <span class="nav-text">petalinux使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#移植Vivado生成的硬件程序到petalinux"><span class="nav-number">1.4.1.</span> <span class="nav-text">移植Vivado生成的硬件程序到petalinux</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内核移植"><span class="nav-number">1.5.</span> <span class="nav-text">内核移植</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#内核移植编译"><span class="nav-number">1.5.1.</span> <span class="nav-text">内核移植编译</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#petalinux应用程序编译"><span class="nav-number">1.5.2.</span> <span class="nav-text">petalinux应用程序编译</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#petalinux中断使用（相应设备驱动需要在相应的内核底下编译）"><span class="nav-number">1.5.3.</span> <span class="nav-text">petalinux中断使用（相应设备驱动需要在相应的内核底下编译）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PL和PS通过bram进行双向通信"><span class="nav-number">1.6.</span> <span class="nav-text">PL和PS通过bram进行双向通信</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FPGA和PS联合编程"><span class="nav-number">1.7.</span> <span class="nav-text">FPGA和PS联合编程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PL和PS数据交互方式及其优缺点"><span class="nav-number">1.8.</span> <span class="nav-text">PL和PS数据交互方式及其优缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用到的参考链接"><span class="nav-number">1.9.</span> <span class="nav-text">用到的参考链接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调试错误汇总"><span class="nav-number">2.</span> <span class="nav-text">调试错误汇总</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#教程系列"><span class="nav-number">1.</span> <span class="nav-text">教程系列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ubuntu环境安装"><span class="nav-number">1.1.</span> <span class="nav-text">Ubuntu环境安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#petalinux安装（需要和vivado版本对应）"><span class="nav-number">1.2.</span> <span class="nav-text">petalinux安装（需要和vivado版本对应）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linux-vivado安装（需要和petalinux版本对应）"><span class="nav-number">1.3.</span> <span class="nav-text">linux vivado安装（需要和petalinux版本对应）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#petalinux使用"><span class="nav-number">1.4.</span> <span class="nav-text">petalinux使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#移植Vivado生成的硬件程序到petalinux"><span class="nav-number">1.4.1.</span> <span class="nav-text">移植Vivado生成的硬件程序到petalinux</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内核移植"><span class="nav-number">1.5.</span> <span class="nav-text">内核移植</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#内核移植编译"><span class="nav-number">1.5.1.</span> <span class="nav-text">内核移植编译</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#petalinux应用程序编译"><span class="nav-number">1.5.2.</span> <span class="nav-text">petalinux应用程序编译</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#petalinux中断使用（相应设备驱动需要在相应的内核底下编译）"><span class="nav-number">1.5.3.</span> <span class="nav-text">petalinux中断使用（相应设备驱动需要在相应的内核底下编译）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PL和PS通过bram进行双向通信"><span class="nav-number">1.6.</span> <span class="nav-text">PL和PS通过bram进行双向通信</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FPGA和PS联合编程"><span class="nav-number">1.7.</span> <span class="nav-text">FPGA和PS联合编程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#petalinux中断最终版"><span class="nav-number">1.8.</span> <span class="nav-text">petalinux中断最终版</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#PL硬件设计编写SDK测试文件确定"><span class="nav-number">1.8.1.</span> <span class="nav-text">PL硬件设计编写SDK测试文件确定</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PL和PS数据交互方式及其优缺点"><span class="nav-number">1.9.</span> <span class="nav-text">PL和PS数据交互方式及其优缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用到的参考链接"><span class="nav-number">1.10.</span> <span class="nav-text">用到的参考链接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调试错误汇总"><span class="nav-number">2.</span> <span class="nav-text">调试错误汇总</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -331,21 +335,21 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">10</span>
-          <span class="site-state-item-name">المقالات</span>
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">Artikel</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
         <span class="site-state-item-count">6</span>
-        <span class="site-state-item-name">التصنيفات</span></a>
+        <span class="site-state-item-name">Kategorien</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
         <span class="site-state-item-count">9</span>
-        <span class="site-state-item-name">الوسوم</span></a>
+        <span class="site-state-item-name">schlagwörter</span></a>
       </div>
   </nav>
 </div>
@@ -382,7 +386,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">XD Lv</span>
 </div>
-  <div class="powered-by">تطبيق الموقع <a href="https://github.com/lxdfrank" rel="noopener" target="_blank">XD Lv</a>
+  <div class="powered-by">Erstellt mit  <a href="https://github.com/lxdfrank" rel="noopener" target="_blank">XD Lv</a>
   </div>
 
         
