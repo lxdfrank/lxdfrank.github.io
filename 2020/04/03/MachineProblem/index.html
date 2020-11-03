@@ -24,10 +24,10 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="MachineProblem">
 <meta property="og:url" content="http://yoursite.com/2020/04/03/MachineProblem/index.html">
-<meta property="og:site_name" content="麦兜">
+<meta property="og:site_name" content="一粒尘埃">
 <meta property="og:description" content="机器学习学习过程中出现的问题">
 <meta property="article:published_time" content="2020-04-03T02:18:34.000Z">
-<meta property="article:modified_time" content="2020-09-16T03:01:50.508Z">
+<meta property="article:modified_time" content="2020-10-29T06:17:55.618Z">
 <meta property="article:author" content="XD Lv">
 <meta property="article:tag" content="MachineLearning">
 <meta name="twitter:card" content="summary">
@@ -45,7 +45,7 @@
   };
 </script>
 
-  <title>MachineProblem | 麦兜</title>
+  <title>MachineProblem | 一粒尘埃</title>
   
 
 
@@ -85,7 +85,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Cambiar a barra de navegación">
+    <div class="toggle" aria-label="Navigationsleiste an/ausschalten">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -96,7 +96,7 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">麦兜</h1>
+      <h1 class="site-title">一粒尘埃</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -114,22 +114,22 @@
   <ul id="menu" class="menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Inicio</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Startseite</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Etiquetas</a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Schlagwörter</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categorías</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Kategorien</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archivo</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archiv</a>
 
   </li>
   </ul>
@@ -170,7 +170,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="麦兜">
+      <meta itemprop="name" content="一粒尘埃">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -182,22 +182,22 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Publicado el</span>
+              <span class="post-meta-item-text">Veröffentlicht am</span>
 
-              <time title="Creado por: 2020-04-03 10:18:34" itemprop="dateCreated datePublished" datetime="2020-04-03T10:18:34+08:00">2020-04-03</time>
+              <time title="Erstellt: 2020-04-03 10:18:34" itemprop="dateCreated datePublished" datetime="2020-04-03T10:18:34+08:00">2020-04-03</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Editado el</span>
-                <time title="Modificado por: 2020-09-16 11:01:50" itemprop="dateModified" datetime="2020-09-16T11:01:50+08:00">2020-09-16</time>
+                <span class="post-meta-item-text">Bearbeitet am</span>
+                <time title="Geändert am: 2020-10-29 14:17:55" itemprop="dateModified" datetime="2020-10-29T14:17:55+08:00">2020-10-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">En</span>
+              <span class="post-meta-item-text">in</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/MachineLearning/" itemprop="url" rel="index"><span itemprop="name">MachineLearning</span></a>
                 </span>
@@ -221,41 +221,8 @@
 
 <p>keras和sklearn联合使用</p>
 <p>tensorflow keras 混合编程</p>
-<pre><code class="bash">import tensorflow as tf
-from tensorflow.examples.tutorials.mnist import input_data
-from keras.layers import Input, Dense, Dropout, BatchNormalization,\
-                         LeakyReLU, concatenate,Conv2D, MaxPooling2D,\
-                         AveragePooling2D, GlobalAveragePooling2D,Conv1D,\
-                         Flatten,merge,Reshape,MaxPooling1D,Lambda,LSTM,\
-                         GlobalMaxPooling2D
-
-<span class="comment"># build module</span>
-
-img = tf.placeholder(tf.float32, shape=(None, 784))
-labels = tf.placeholder(tf.float32, shape=(None, 10))
-
-x = Dense(128, activation=<span class="string">'relu'</span>)(img)
-x = Dense(128, activation=<span class="string">'relu'</span>)(x)
-prediction = Dense(10, activation=<span class="string">'softmax'</span>)(x)
-
-loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits=prediction, labels=labels))
-
-train_optim = tf.train.AdamOptimizer().minimize(loss)
-
-mnist_data = input_data.read_data_sets(<span class="string">'MNIST_data/'</span>, one_hot=True)
-
-with tf.Session() as sess:
-    init = tf.global_variables_initializer()
-    sess.run(init)
-    <span class="keyword">for</span> i <span class="keyword">in</span> range(1000):
-        batch_x, batch_y = mnist_data.train.next_batch(50)
-        sess.run(train_optim, feed_dict={img: batch_x, labels: batch_y})
-
-        acc_pred = tf.keras.metrics.categorical_accuracy(labels, prediction)
-        pred = sess.run(acc_pred, feed_dict={labels: mnist_data.test.labels, img: mnist_data.test.images})
-
-        <span class="built_in">print</span>(<span class="string">'accuracy: %.3f'</span> % (sum(pred)/len(mnist_data.test.labels)))</code></pre>
-<h2 id="keras-输出中间层"><a href="#keras-输出中间层" class="headerlink" title="keras 输出中间层"></a><a href="https://blog.csdn.net/tszupup/article/details/89192737" target="_blank" rel="noopener">keras 输出中间层</a></h2><p>1 通过K.function()函数打印模型中间层的输出<br>2 通过函数API打印模型中间层的输出</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">import tensorflow as tf</span><br><span class="line">from tensorflow.examples.tutorials.mnist import input_data</span><br><span class="line">from keras.layers import Input, Dense, Dropout, BatchNormalization,\</span><br><span class="line">                         LeakyReLU, concatenate,Conv2D, MaxPooling2D,\</span><br><span class="line">                         AveragePooling2D, GlobalAveragePooling2D,Conv1D,\</span><br><span class="line">                         Flatten,merge,Reshape,MaxPooling1D,Lambda,LSTM,\</span><br><span class="line">                         GlobalMaxPooling2D</span><br><span class="line"> </span><br><span class="line"><span class="comment"># build module</span></span><br><span class="line"> </span><br><span class="line">img = tf.placeholder(tf.float32, shape=(None, 784))</span><br><span class="line">labels = tf.placeholder(tf.float32, shape=(None, 10))</span><br><span class="line"> </span><br><span class="line">x = Dense(128, activation=<span class="string">'relu'</span>)(img)</span><br><span class="line">x = Dense(128, activation=<span class="string">'relu'</span>)(x)</span><br><span class="line">prediction = Dense(10, activation=<span class="string">'softmax'</span>)(x)</span><br><span class="line"> </span><br><span class="line">loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits=prediction, labels=labels))</span><br><span class="line"></span><br><span class="line">train_optim = tf.train.AdamOptimizer().minimize(loss)</span><br><span class="line"> </span><br><span class="line">mnist_data = input_data.read_data_sets(<span class="string">'MNIST_data/'</span>, one_hot=True)</span><br><span class="line"> </span><br><span class="line">with tf.Session() as sess:</span><br><span class="line">    init = tf.global_variables_initializer()</span><br><span class="line">    sess.run(init)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(1000):</span><br><span class="line">        batch_x, batch_y = mnist_data.train.next_batch(50)</span><br><span class="line">        sess.run(train_optim, feed_dict=&#123;img: batch_x, labels: batch_y&#125;)</span><br><span class="line">         </span><br><span class="line">        acc_pred = tf.keras.metrics.categorical_accuracy(labels, prediction)</span><br><span class="line">        pred = sess.run(acc_pred, feed_dict=&#123;labels: mnist_data.test.labels, img: mnist_data.test.images&#125;)</span><br><span class="line">         </span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'accuracy: %.3f'</span> % (sum(pred)/len(mnist_data.test.labels)))</span><br><span class="line">``` </span><br><span class="line"><span class="comment">## [keras 输出中间层](https://blog.csdn.net/tszupup/article/details/89192737)</span></span><br><span class="line">1 通过K.function()函数打印模型中间层的输出</span><br><span class="line">2 通过函数API打印模型中间层的输出</span><br><span class="line"></span><br><span class="line"><span class="comment">## 训练过程可视化</span></span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line"></span><br><span class="line"><span class="built_in">history</span> = model.fit(x, y, validation_split=0.25, epochs=50, batch_size=16, verbose=1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制训练 &amp; 验证的准确率值</span></span><br><span class="line">plt.plot(history.history[<span class="string">'acc'</span>])</span><br><span class="line">plt.plot(history.history[<span class="string">'val_acc'</span>])</span><br><span class="line">plt.title(<span class="string">'Model accuracy'</span>)</span><br><span class="line">plt.ylabel(<span class="string">'Accuracy'</span>)</span><br><span class="line">plt.xlabel(<span class="string">'Epoch'</span>)</span><br><span class="line">plt.legend([<span class="string">'Train'</span>, <span class="string">'Test'</span>], loc=<span class="string">'upper left'</span>)</span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制训练 &amp; 验证的损失值</span></span><br><span class="line">plt.plot(history.history[<span class="string">'loss'</span>])</span><br><span class="line">plt.plot(history.history[<span class="string">'val_loss'</span>])</span><br><span class="line">plt.title(<span class="string">'Model loss'</span>)</span><br><span class="line">plt.ylabel(<span class="string">'Loss'</span>)</span><br><span class="line">plt.xlabel(<span class="string">'Epoch'</span>)</span><br><span class="line">plt.legend([<span class="string">'Train'</span>, <span class="string">'Test'</span>], loc=<span class="string">'upper left'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<h2 id="keras训练多输入"><a href="#keras训练多输入" class="headerlink" title="keras训练多输入"></a>keras训练多输入</h2><p><a href="https://www.jb51.net/article/189193.htm" target="_blank" rel="noopener">https://www.jb51.net/article/189193.htm</a></p>
 
     </div>
 
@@ -265,13 +232,13 @@ with tf.Session() as sess:
         <div class="reward-container">
   <div>坚持原创技术分享，您的支持将鼓励我继续创作!</div>
   <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
-    Donar
+    Spenden
   </button>
   <div id="qr" style="display: none;">
       
       <div style="display: inline-block;">
-        <img src="/images/wechatpay.png" alt="XD Lv WeChat Pay">
-        <p>WeChat Pay</p>
+        <img src="/images/wechatpay.png" alt="XD Lv WeChat Bezahlung">
+        <p>WeChat Bezahlung</p>
       </div>
 
   </div>
@@ -346,16 +313,16 @@ with tf.Session() as sess:
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          Tabla de contenidos
+          Inhaltsverzeichnis
         </li>
         <li class="sidebar-nav-overview">
-          Inicio
+          Übersicht
         </li>
       </ul>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#keras-输出中间层"><span class="nav-number">1.</span> <span class="nav-text">keras 输出中间层</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#keras训练多输入"><span class="nav-number">1.</span> <span class="nav-text">keras训练多输入</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -369,21 +336,21 @@ with tf.Session() as sess:
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
-          <span class="site-state-item-name">entradas</span>
+          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-name">Artikel</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
         <span class="site-state-item-count">6</span>
-        <span class="site-state-item-name">categorías</span></a>
+        <span class="site-state-item-name">Kategorien</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
         <span class="site-state-item-count">9</span>
-        <span class="site-state-item-name">tags</span></a>
+        <span class="site-state-item-name">schlagwörter</span></a>
       </div>
   </nav>
 </div>
@@ -420,7 +387,7 @@ with tf.Session() as sess:
   </span>
   <span class="author" itemprop="copyrightHolder">XD Lv</span>
 </div>
-  <div class="powered-by">Creado mediante <a href="https://github.com/lxdfrank" rel="noopener" target="_blank">XD Lv</a>
+  <div class="powered-by">Erstellt mit  <a href="https://github.com/lxdfrank" rel="noopener" target="_blank">XD Lv</a>
   </div>
 
         
