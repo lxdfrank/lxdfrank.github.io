@@ -27,7 +27,7 @@
 <meta property="og:site_name" content="一粒尘埃">
 <meta property="og:description" content="机器学习学习过程中出现的问题">
 <meta property="article:published_time" content="2020-04-03T02:18:34.000Z">
-<meta property="article:modified_time" content="2021-02-20T10:57:49.190Z">
+<meta property="article:modified_time" content="2021-03-03T01:30:06.753Z">
 <meta property="article:author" content="XD Lv">
 <meta property="article:tag" content="MachineLearning">
 <meta name="twitter:card" content="summary">
@@ -85,7 +85,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Navigationsleiste an/ausschalten">
+    <div class="toggle" aria-label="تشغيل شريط التصفح">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -114,22 +114,22 @@
   <ul id="menu" class="menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Startseite</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Schlagwörter</a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>الوسوم</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Kategorien</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>التصنيفات</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archiv</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>الأرشيفات</a>
 
   </li>
   </ul>
@@ -182,22 +182,22 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Veröffentlicht am</span>
+              <span class="post-meta-item-text">نُشر في</span>
 
-              <time title="Erstellt: 2020-04-03 10:18:34" itemprop="dateCreated datePublished" datetime="2020-04-03T10:18:34+08:00">2020-04-03</time>
+              <time title="أُنشأ: 2020-04-03 10:18:34" itemprop="dateCreated datePublished" datetime="2020-04-03T10:18:34+08:00">2020-04-03</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Bearbeitet am</span>
-                <time title="Geändert am: 2021-02-20 18:57:49" itemprop="dateModified" datetime="2021-02-20T18:57:49+08:00">2021-02-20</time>
+                <span class="post-meta-item-text">عُدل في</span>
+                <time title="عُدل: 2021-03-03 09:30:06" itemprop="dateModified" datetime="2021-03-03T09:30:06+08:00">2021-03-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">in</span>
+              <span class="post-meta-item-text">في</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/MachineLearning/" itemprop="url" rel="index"><span itemprop="name">MachineLearning</span></a>
                 </span>
@@ -223,8 +223,11 @@
 <p>tensorflow keras 混合编程</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">import tensorflow as tf</span><br><span class="line">from tensorflow.examples.tutorials.mnist import input_data</span><br><span class="line">from keras.layers import Input, Dense, Dropout, BatchNormalization,\</span><br><span class="line">                         LeakyReLU, concatenate,Conv2D, MaxPooling2D,\</span><br><span class="line">                         AveragePooling2D, GlobalAveragePooling2D,Conv1D,\</span><br><span class="line">                         Flatten,merge,Reshape,MaxPooling1D,Lambda,LSTM,\</span><br><span class="line">                         GlobalMaxPooling2D</span><br><span class="line"> </span><br><span class="line"><span class="comment"># build module</span></span><br><span class="line"> </span><br><span class="line">img = tf.placeholder(tf.float32, shape=(None, 784))</span><br><span class="line">labels = tf.placeholder(tf.float32, shape=(None, 10))</span><br><span class="line"> </span><br><span class="line">x = Dense(128, activation=<span class="string">'relu'</span>)(img)</span><br><span class="line">x = Dense(128, activation=<span class="string">'relu'</span>)(x)</span><br><span class="line">prediction = Dense(10, activation=<span class="string">'softmax'</span>)(x)</span><br><span class="line"> </span><br><span class="line">loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits=prediction, labels=labels))</span><br><span class="line"></span><br><span class="line">train_optim = tf.train.AdamOptimizer().minimize(loss)</span><br><span class="line"> </span><br><span class="line">mnist_data = input_data.read_data_sets(<span class="string">'MNIST_data/'</span>, one_hot=True)</span><br><span class="line"> </span><br><span class="line">with tf.Session() as sess:</span><br><span class="line">    init = tf.global_variables_initializer()</span><br><span class="line">    sess.run(init)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(1000):</span><br><span class="line">        batch_x, batch_y = mnist_data.train.next_batch(50)</span><br><span class="line">        sess.run(train_optim, feed_dict=&#123;img: batch_x, labels: batch_y&#125;)</span><br><span class="line">         </span><br><span class="line">        acc_pred = tf.keras.metrics.categorical_accuracy(labels, prediction)</span><br><span class="line">        pred = sess.run(acc_pred, feed_dict=&#123;labels: mnist_data.test.labels, img: mnist_data.test.images&#125;)</span><br><span class="line">         </span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'accuracy: %.3f'</span> % (sum(pred)/len(mnist_data.test.labels)))</span><br><span class="line">``` </span><br><span class="line"><span class="comment">## [keras 输出中间层](https://blog.csdn.net/tszupup/article/details/89192737)</span></span><br><span class="line">1 通过K.function()函数打印模型中间层的输出</span><br><span class="line">2 通过函数API打印模型中间层的输出</span><br><span class="line"></span><br><span class="line"><span class="comment">## 训练过程可视化</span></span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line"></span><br><span class="line"><span class="built_in">history</span> = model.fit(x, y, validation_split=0.25, epochs=50, batch_size=16, verbose=1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制训练 &amp; 验证的准确率值</span></span><br><span class="line">plt.plot(history.history[<span class="string">'acc'</span>])</span><br><span class="line">plt.plot(history.history[<span class="string">'val_acc'</span>])</span><br><span class="line">plt.title(<span class="string">'Model accuracy'</span>)</span><br><span class="line">plt.ylabel(<span class="string">'Accuracy'</span>)</span><br><span class="line">plt.xlabel(<span class="string">'Epoch'</span>)</span><br><span class="line">plt.legend([<span class="string">'Train'</span>, <span class="string">'Test'</span>], loc=<span class="string">'upper left'</span>)</span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制训练 &amp; 验证的损失值</span></span><br><span class="line">plt.plot(history.history[<span class="string">'loss'</span>])</span><br><span class="line">plt.plot(history.history[<span class="string">'val_loss'</span>])</span><br><span class="line">plt.title(<span class="string">'Model loss'</span>)</span><br><span class="line">plt.ylabel(<span class="string">'Loss'</span>)</span><br><span class="line">plt.xlabel(<span class="string">'Epoch'</span>)</span><br><span class="line">plt.legend([<span class="string">'Train'</span>, <span class="string">'Test'</span>], loc=<span class="string">'upper left'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 <h2 id="keras训练多输入"><a href="#keras训练多输入" class="headerlink" title="keras训练多输入"></a>keras训练多输入</h2><p><a href="https://www.jb51.net/article/189193.htm" target="_blank" rel="noopener">https://www.jb51.net/article/189193.htm</a></p>
-<p><a href="https://www.cnblogs.com/dataismore/p/13519045.html" target="_blank" rel="noopener">Cuda10 RTX2070 安装 </a></p>
-
+<p><a href="https://www.cnblogs.com/dataismore/p/13519045.html" target="_blank" rel="noopener">Cuda10 RTX2070 安装 </a><br><a href="https://www.cnblogs.com/ctrlplayer/p/14088433.html" target="_blank" rel="noopener">同一系统下安装不同的Cuda版本</a><br><a href="https://developer.nvidia.com/cuda-toolkit-archive" target="_blank" rel="noopener">Cuda版本</a><br><a href="https://developer.nvidia.com/rdp/cudnn-archive" target="_blank" rel="noopener">CudaNN对应版本</a></p>
+<h2 id="Python小知识"><a href="#Python小知识" class="headerlink" title="Python小知识"></a>Python小知识</h2><p>[1]class继承类重写类的方法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">classFoo(object):</span><br><span class="line">  def__new__(cls,*args,**kwargs):</span><br><span class="line">    obj=object.__new__(cls,*args,**kwargs) </span><br><span class="line">    <span class="comment"># 这里的object.__new__(cls, *args, **kwargs)  等价于</span></span><br><span class="line">    <span class="comment"># super(Foo, cls).__new__(cls, *args, **kwargs) </span></span><br><span class="line">    <span class="comment"># object.__new__(Foo, *args, **kwargs)</span></span><br><span class="line">    <span class="comment"># Bar.__new__(cls, *args, **kwargs)</span></span><br><span class="line">    <span class="comment"># Student.__new__(cls, *args, **kwargs)，即使Student跟Foo没有关系，也是允许的，因为Student是从object派生的新式类</span></span><br><span class="line">  </span><br><span class="line">    <span class="comment"># 在任何新式类，不能调用自身的“__new__”来创建实例，因为这会造成死循环</span></span><br><span class="line">    <span class="comment"># 所以要避免return Foo.__new__(cls, *args, **kwargs)或return cls.__new__(cls, *args, **kwargs)</span></span><br><span class="line">    <span class="keyword">print</span><span class="string">"Call __new__ for %s"</span>%obj.__class__</span><br><span class="line">    returnobj  </span><br><span class="line">  </span><br><span class="line">classBar(Foo):</span><br><span class="line">  def__new__(cls,*args,**kwargs):</span><br><span class="line">    obj=object.__new__(cls,*args,**kwargs) </span><br><span class="line">    <span class="keyword">print</span><span class="string">"Call __new__ for %s"</span>%obj.__class__</span><br><span class="line">    returnobj</span><br></pre></td></tr></table></figure>
+<p>[2]super()函数是用于调用父类(超类)的一个方法。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">     <span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(self, x)</span>:</span></span><br><span class="line">         y = x+<span class="number">1</span></span><br><span class="line">         print(y)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span><span class="params">(A)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        super().add(x)</span><br><span class="line">b = B()</span><br><span class="line">b.add(<span class="number">2</span>)  <span class="comment"># 3</span></span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -233,13 +236,13 @@
         <div class="reward-container">
   <div>坚持原创技术分享，您的支持将鼓励我继续创作!</div>
   <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
-    Spenden
+    تبرّع
   </button>
   <div id="qr" style="display: none;">
       
       <div style="display: inline-block;">
-        <img src="/images/wechatpay.png" alt="XD Lv WeChat Bezahlung">
-        <p>WeChat Bezahlung</p>
+        <img src="/images/wechatpay.png" alt="XD Lv WeChat Pay">
+        <p>WeChat Pay</p>
       </div>
 
   </div>
@@ -314,16 +317,16 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          Inhaltsverzeichnis
+          المحتويات
         </li>
         <li class="sidebar-nav-overview">
-          Übersicht
+          عام
         </li>
       </ul>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#keras训练多输入"><span class="nav-number">1.</span> <span class="nav-text">keras训练多输入</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#keras训练多输入"><span class="nav-number">1.</span> <span class="nav-text">keras训练多输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python小知识"><span class="nav-number">2.</span> <span class="nav-text">Python小知识</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -338,20 +341,20 @@
           <a href="/archives/">
         
           <span class="site-state-item-count">17</span>
-          <span class="site-state-item-name">Artikel</span>
+          <span class="site-state-item-name">المقالات</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
         <span class="site-state-item-count">6</span>
-        <span class="site-state-item-name">Kategorien</span></a>
+        <span class="site-state-item-name">التصنيفات</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
         <span class="site-state-item-count">9</span>
-        <span class="site-state-item-name">schlagwörter</span></a>
+        <span class="site-state-item-name">الوسوم</span></a>
       </div>
   </nav>
 </div>
@@ -388,7 +391,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">XD Lv</span>
 </div>
-  <div class="powered-by">Erstellt mit  <a href="https://github.com/lxdfrank" rel="noopener" target="_blank">XD Lv</a>
+  <div class="powered-by">تطبيق الموقع <a href="https://github.com/lxdfrank" rel="noopener" target="_blank">XD Lv</a>
   </div>
 
         
