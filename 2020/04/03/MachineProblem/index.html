@@ -27,7 +27,7 @@
 <meta property="og:site_name" content="一粒尘埃">
 <meta property="og:description" content="机器学习学习过程中出现的问题">
 <meta property="article:published_time" content="2020-04-03T02:18:34.000Z">
-<meta property="article:modified_time" content="2021-03-03T01:30:06.753Z">
+<meta property="article:modified_time" content="2021-03-18T03:36:00.185Z">
 <meta property="article:author" content="XD Lv">
 <meta property="article:tag" content="MachineLearning">
 <meta name="twitter:card" content="summary">
@@ -191,7 +191,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">عُدل في</span>
-                <time title="عُدل: 2021-03-03 09:30:06" itemprop="dateModified" datetime="2021-03-03T09:30:06+08:00">2021-03-03</time>
+                <time title="عُدل: 2021-03-18 11:36:00" itemprop="dateModified" datetime="2021-03-18T11:36:00+08:00">2021-03-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -228,6 +228,10 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">classFoo(object):</span><br><span class="line">  def__new__(cls,*args,**kwargs):</span><br><span class="line">    obj=object.__new__(cls,*args,**kwargs) </span><br><span class="line">    <span class="comment"># 这里的object.__new__(cls, *args, **kwargs)  等价于</span></span><br><span class="line">    <span class="comment"># super(Foo, cls).__new__(cls, *args, **kwargs) </span></span><br><span class="line">    <span class="comment"># object.__new__(Foo, *args, **kwargs)</span></span><br><span class="line">    <span class="comment"># Bar.__new__(cls, *args, **kwargs)</span></span><br><span class="line">    <span class="comment"># Student.__new__(cls, *args, **kwargs)，即使Student跟Foo没有关系，也是允许的，因为Student是从object派生的新式类</span></span><br><span class="line">  </span><br><span class="line">    <span class="comment"># 在任何新式类，不能调用自身的“__new__”来创建实例，因为这会造成死循环</span></span><br><span class="line">    <span class="comment"># 所以要避免return Foo.__new__(cls, *args, **kwargs)或return cls.__new__(cls, *args, **kwargs)</span></span><br><span class="line">    <span class="keyword">print</span><span class="string">"Call __new__ for %s"</span>%obj.__class__</span><br><span class="line">    returnobj  </span><br><span class="line">  </span><br><span class="line">classBar(Foo):</span><br><span class="line">  def__new__(cls,*args,**kwargs):</span><br><span class="line">    obj=object.__new__(cls,*args,**kwargs) </span><br><span class="line">    <span class="keyword">print</span><span class="string">"Call __new__ for %s"</span>%obj.__class__</span><br><span class="line">    returnobj</span><br></pre></td></tr></table></figure>
 <p>[2]super()函数是用于调用父类(超类)的一个方法。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">     <span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(self, x)</span>:</span></span><br><span class="line">         y = x+<span class="number">1</span></span><br><span class="line">         print(y)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span><span class="params">(A)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        super().add(x)</span><br><span class="line">b = B()</span><br><span class="line">b.add(<span class="number">2</span>)  <span class="comment"># 3</span></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="python问题集锦"><a href="#python问题集锦" class="headerlink" title="python问题集锦"></a>python问题集锦</h2><p>anaconda特定环境下运行jupyter notebook</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ conda activate ENV  <span class="comment">#启动相应环境</span></span><br><span class="line">$ conda install jupyter</span><br><span class="line">$ conda install ipython</span><br><span class="line">$ jupyter notebook    <span class="comment">#启动jupyter notebook</span></span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -326,7 +330,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#keras训练多输入"><span class="nav-number">1.</span> <span class="nav-text">keras训练多输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python小知识"><span class="nav-number">2.</span> <span class="nav-text">Python小知识</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#keras训练多输入"><span class="nav-number">1.</span> <span class="nav-text">keras训练多输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python小知识"><span class="nav-number">2.</span> <span class="nav-text">Python小知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python问题集锦"><span class="nav-number">3.</span> <span class="nav-text">python问题集锦</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -340,7 +344,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">المقالات</span>
         </a>
       </div>
