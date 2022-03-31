@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GitHub搭建博客 hexo+NexT">
+<meta property="og:url" content="http://yoursite.com/2020/03/27/github_hexo/index.html">
+<meta property="og:site_name" content="一粒尘埃">
+<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta property="article:published_time" content="2020-03-27T13:08:48.000Z">
+<meta property="article:modified_time" content="2021-04-03T08:20:44.102Z">
+<meta property="article:author" content="XD Lv">
+<meta property="article:tag" content="Hexo">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/03/27/github_hexo/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>GitHub搭建博客 hexo+NexT | 一粒尘埃</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="تشغيل شريط التصفح">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">一粒尘埃</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>الوسوم</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>التصنيفات</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>الأرشيفات</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/27/github_hexo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="XD Lv">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一粒尘埃">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          GitHub搭建博客 hexo+NexT
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">نُشر في</span>
+
+              <time title="أُنشأ: 2020-03-27 21:08:48" itemprop="dateCreated datePublished" datetime="2020-03-27T21:08:48+08:00">2020-03-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">عُدل في</span>
+                <time title="عُدل: 2021-04-03 16:20:44" itemprop="dateModified" datetime="2021-04-03T16:20:44+08:00">2021-04-03</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">في</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<a id="more"></a>
+
+
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="使用git连接github"><a href="#使用git连接github" class="headerlink" title="使用git连接github"></a>使用git连接github</h3><h5 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"123@163.com"</span> //163 是你自己注册GitHub的邮箱 生成自己key码添加到github的设置中 id_ras id_ras.pub</span><br><span class="line">$ ssh -T git@github.com</span><br><span class="line">$ git config --global user.name  <span class="string">"name"</span>//你的GitHub登陆名</span><br><span class="line">$ git config --global user.email <span class="string">"123@126.com"</span>//你的GitHub注册邮箱</span><br><span class="line">$ git remote add origin git@github.com:flora0103/example.git    //关联一个远程库命令， git@github.com:flora0103/example.git   这个是自己远程库</span><br><span class="line">$ git push -u origin master    //关联后,第一次推送master分支的所有内容命令，此后，每次本地提交后，就可以使用命令git push origin master推送最新修改</span><br><span class="line">$ git init</span><br><span class="line">$ git add .</span><br><span class="line">$ git commit -m <span class="string">"操作"</span></span><br><span class="line">$ git push origin master</span><br><span class="line">$ git push origin master -f</span><br></pre></td></tr></table></figure>
+<h3 id="使用hexo"><a href="#使用hexo" class="headerlink" title="使用hexo"></a>使用hexo</h3><h5 id="文件设置以及常用命令"><a href="#文件设置以及常用命令" class="headerlink" title="文件设置以及常用命令"></a>文件设置以及常用命令</h5><h6 id="文件修改"><a href="#文件修改" class="headerlink" title="文件修改"></a>文件修改</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;root&#x2F;_config.yml</span><br><span class="line"># 更换hexo主题</span><br><span class="line">theme: next</span><br><span class="line"># 连接hexo到github 使用hexo命令代替git命令上传github</span><br><span class="line">theme: next</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:liuxianan&#x2F;liuxianan.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<p>使用<!--more-->来控制hexo NexT主页文章预览</p>
+<p><a href="https://www.jianshu.com/p/e17711e44e00" target="_blank" rel="noopener">Hexo使用攻略-添加新文章分类及标签</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建文章tags，categories</span></span><br><span class="line">$ hexo new title</span><br><span class="line">$ hexo new page categories</span><br><span class="line">$ hexo new md_name</span><br></pre></td></tr></table></figure>
+<p><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">Next官方教程</a></p>
+<h6 id="常用命令-1"><a href="#常用命令-1" class="headerlink" title="常用命令"></a>常用命令</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br><span class="line">$ hexo clean</span><br><span class="line">$ hexo generate 或者 hexo g</span><br><span class="line">$ hexo server 或者 hexo s</span><br><span class="line">$ hexo deploy 或者 hexo d</span><br></pre></td></tr></table></figure>
+
+<h3 id="hexo博客加密"><a href="#hexo博客加密" class="headerlink" title="hexo博客加密"></a>hexo博客加密</h3><p><a href="https://github.com/MikeCoder/hexo-blog-encrypt/blob/master/ReadMe.zh.md" target="_blank" rel="noopener">文章参考hexo-blog-encrypt</a></p>
+<h3 id="markdown使用笔记"><a href="#markdown使用笔记" class="headerlink" title="markdown使用笔记"></a>markdown使用笔记</h3><h4 id="markdown-OmniMarkupPreviewer-LiveReload"><a href="#markdown-OmniMarkupPreviewer-LiveReload" class="headerlink" title="markdown+OmniMarkupPreviewer+LiveReload"></a>markdown+OmniMarkupPreviewer+LiveReload</h4><h6 id="安装过程："><a href="#安装过程：" class="headerlink" title="安装过程："></a>安装过程：</h6><ul>
+<li>Markdown Editing<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;color_scheme&quot;: &quot;Packages&#x2F;Color Scheme - Default&#x2F;Monokai.tmTheme&quot;,</span><br><span class="line">    &#x2F;&#x2F; &quot;color_scheme&quot;: &quot;Packages&#x2F;MarkdownEditing&#x2F;MarkdownEditor-Dark.tmTheme&quot;,</span><br><span class="line">    &#x2F;&#x2F; Layout</span><br><span class="line">    &quot;draw_centered&quot;: false,</span><br><span class="line">    &quot;word_wrap&quot;: true,</span><br><span class="line">    &quot;wrap_width&quot;: 120,</span><br><span class="line">    &quot;rulers&quot;: [],</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>OmniMarkupPreviwer</li>
+</ul>
+<p>Preferences → Package Settings → OmniMarkupPreviewer →Setting——User</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;renderer_options-MarkdownRenderer&quot;:</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;extensions&quot;: [&quot;tables&quot;, &quot;fenced_code&quot;, &quot;codehilite&quot;],</span><br><span class="line">        &quot;parser&quot;: &quot;markdown&quot;,</span><br><span class="line">        &quot;enabled_parsers&quot;: [&quot;markdown&quot;]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Preferences → Package Settings → OmniMarkupPreviewer → Setting——Default</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;keys&quot;: [&quot;ctrl+r&quot;], &quot;command&quot;: &quot;omni_markup_preview&quot;,</span><br><span class="line">        &quot;context&quot;: [&#123;&quot;key&quot;: &quot;omnimarkup_is_enabled&quot;, &quot;operator&quot;: &quot;equal&quot;, &quot;operand&quot;: &quot;&quot;&#125;]</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>LiveReload</li>
+</ul>
+<h3 id="python自动补全功能"><a href="#python自动补全功能" class="headerlink" title="python自动补全功能"></a>python自动补全功能</h3><p>sublimecodeIntel</p>
+<h3 id="python-jupyter"><a href="#python-jupyter" class="headerlink" title="python jupyter"></a>python jupyter</h3><p>pc /usr/bin/python3.6 -m pip install pyzmqc</p>
+<p>helium<br>hermes</p>
+<p>jupyter notebook中运行获取jupyter连接信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%connect_info</span><br></pre></td></tr></table></figure>
+
+
+<p>在 Sublime 中打开 Shift+Ctrl+P，然后输入 Helium 进行安装<br>jupyterlab</p>
+<h2 id="在-Jupyter-里面执行-magic-方法"><a href="#在-Jupyter-里面执行-magic-方法" class="headerlink" title="在 Jupyter 里面执行 magic 方法"></a>在 Jupyter 里面执行 magic 方法</h2><p>%connect_info<br>{<br>  “shell_port”: 51835,<br>  “iopub_port”: 43591,<br>  “stdin_port”: 37817,<br>  “control_port”: 39041,<br>  “hb_port”: 50915,<br>  “ip”: “127.0.0.1”,<br>  “key”: “f4739d3c-a1e6462527617877ebf90e25”,<br>  “transport”: “tcp”,<br>  “signature_scheme”: “hmac-sha256”,<br>  “kernel_name”: “”<br>}<br>Paste the above JSON into a file, and connect with:<br>    $&gt; jupyter <app> –existing <file><br>or, if you are local, you can connect with just:<br>    $&gt; jupyter <app> –existing kernel-7826a41d-5ed1-4014-b421-a9205a712668.json<br>or even just:<br>    $&gt; jupyter <app> –existing<br>if this is the most recent Jupyter kernel you have started.</app></app></file></app></p>
+<h3 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h3><p><a href="https://www.jianshu.com/p/d95cff938277" target="_blank" rel="noopener">参考文献</a></p>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作!</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    تبرّع
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="XD Lv WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/03/28/sEMG/" rel="next" title="sEMG">
+      sEMG <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          المحتويات
+        </li>
+        <li class="sidebar-nav-overview">
+          عام
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用git连接github"><span class="nav-number">1.1.</span> <span class="nav-text">使用git连接github</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#常用命令"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">常用命令</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用hexo"><span class="nav-number">1.2.</span> <span class="nav-text">使用hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#文件设置以及常用命令"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">文件设置以及常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#文件修改"><span class="nav-number">1.2.0.1.1.</span> <span class="nav-text">文件修改</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#常用命令-1"><span class="nav-number">1.2.0.1.2.</span> <span class="nav-text">常用命令</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo博客加密"><span class="nav-number">1.3.</span> <span class="nav-text">hexo博客加密</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#markdown使用笔记"><span class="nav-number">1.4.</span> <span class="nav-text">markdown使用笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#markdown-OmniMarkupPreviewer-LiveReload"><span class="nav-number">1.4.1.</span> <span class="nav-text">markdown+OmniMarkupPreviewer+LiveReload</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#安装过程："><span class="nav-number">1.4.1.0.1.</span> <span class="nav-text">安装过程：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#python自动补全功能"><span class="nav-number">1.5.</span> <span class="nav-text">python自动补全功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#python-jupyter"><span class="nav-number">1.6.</span> <span class="nav-text">python jupyter</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在-Jupyter-里面执行-magic-方法"><span class="nav-number">2.</span> <span class="nav-text">在 Jupyter 里面执行 magic 方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#主题配置"><span class="nav-number">2.1.</span> <span class="nav-text">主题配置</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">XD Lv</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-name">المقالات</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">التصنيفات</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">الوسوم</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/lxdfrank" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;lxdfrank" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XD Lv</span>
+</div>
+  <div class="powered-by">تطبيق الموقع <a href="https://github.com/lxdfrank" rel="noopener" target="_blank">XD Lv</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

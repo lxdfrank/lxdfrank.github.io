@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="https:&#x2F;&#x2F;github.com&#x2F;ResearchingDexter&#x2F;SKNet_pytorch&#x2F;blob&#x2F;master&#x2F;SKNet.py">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SKNet">
+<meta property="og:url" content="http://yoursite.com/2020/10/19/SKNet/index.html">
+<meta property="og:site_name" content="一粒尘埃">
+<meta property="og:description" content="https:&#x2F;&#x2F;github.com&#x2F;ResearchingDexter&#x2F;SKNet_pytorch&#x2F;blob&#x2F;master&#x2F;SKNet.py">
+<meta property="og:image" content="http://img.mp.itc.cn/upload/20170802/fb03d75df82f432693cf895490574a33_th.jpg">
+<meta property="og:image" content="http://img.mp.itc.cn/upload/20170802/92bc9ccb386c4e3c93a0e07d84bd7099_th.jpg">
+<meta property="og:image" content="http://img.mp.itc.cn/upload/20170802/ad22985cc0cb43278a40c067989165c5_th.jpg">
+<meta property="og:image" content="http://img.mp.itc.cn/upload/20170802/247d198e8ef64a7fa040887b6f0ee0e0_th.jpg">
+<meta property="og:image" content="http://img.mp.itc.cn/upload/20170802/915f03dfc77a4f4f98aa3a8b1b6372e3_th.jpg">
+<meta property="og:image" content="http://img.mp.itc.cn/upload/20170802/c7cda1c11e0b4adf8806bf368ad28e4a_th.jpg">
+<meta property="og:image" content="http://img.mp.itc.cn/upload/20170802/d9f2ce80c6a74cfab5d1bba7774e8dc9_th.jpg">
+<meta property="og:image" content="http://img.mp.itc.cn/upload/20170802/fe772bea278344ae9d8448f4722d77a2_th.jpg">
+<meta property="og:image" content="http://img.mp.itc.cn/upload/20170802/d4c143a4b3cd4dbf87ee04a9d8025b8a_th.jpg">
+<meta property="og:image" content="http://img.mp.itc.cn/upload/20170802/80ce36d3238c436da1186a15ecb03f87_th.jpg">
+<meta property="og:image" content="http://img.mp.itc.cn/upload/20170802/f05e4627a7b74413a3e2679e5338413a_th.jpg">
+<meta property="og:image" content="http://img.mp.itc.cn/upload/20170802/0cd967fd695f44bfbd9ed71680a0b767_th.jpg">
+<meta property="og:image" content="http://img.mp.itc.cn/upload/20170802/a145b691c02f43b4b5832ef41804cc51_th.jpg">
+<meta property="og:image" content="http://img.mp.itc.cn/upload/20170802/1d729a499e774822a4cef9c8c809ea6c_th.jpg">
+<meta property="article:published_time" content="2020-10-19T12:10:50.000Z">
+<meta property="article:modified_time" content="2020-10-24T10:36:25.739Z">
+<meta property="article:author" content="XD Lv">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://img.mp.itc.cn/upload/20170802/fb03d75df82f432693cf895490574a33_th.jpg">
+
+<link rel="canonical" href="http://yoursite.com/2020/10/19/SKNet/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>SKNet | 一粒尘埃</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="تشغيل شريط التصفح">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">一粒尘埃</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>الوسوم</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>التصنيفات</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>الأرشيفات</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/19/SKNet/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="XD Lv">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一粒尘埃">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          SKNet
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">نُشر في</span>
+
+              <time title="أُنشأ: 2020-10-19 20:10:50" itemprop="dateCreated datePublished" datetime="2020-10-19T20:10:50+08:00">2020-10-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">عُدل في</span>
+                <time title="عُدل: 2020-10-24 18:36:25" itemprop="dateModified" datetime="2020-10-24T18:36:25+08:00">2020-10-24</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><a href="https://github.com/ResearchingDexter/SKNet_pytorch/blob/master/SKNet.py" target="_blank" rel="noopener">https://github.com/ResearchingDexter/SKNet_pytorch/blob/master/SKNet.py</a></p>
+<a id="more"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="content_views" class="htmledit_views">
+                    <p>转自：http://www.sohu.com/a/161633191_465975</p>
+<p><br></p>
+<p></p>
+<p style="border: 0px; margin-top: 0.63em; margin-bottom: 1.8em; padding-top: 0px; padding-bottom: 0px; counter-reset: list-1 0 list-2 0 list-3 0 list-4 0 list-5 0 list-6 0 list-7 0 list-8 0 list-9 0; color: rgb(25, 25, 25); font-family: &quot;PingFang SC&quot;, Arial, 微软雅黑, 宋体, simsun, sans-serif; text-align: left; background-color: rgb(255, 255, 255);"><img src="http://img.mp.itc.cn/upload/20170802/fb03d75df82f432693cf895490574a33_th.jpg" alt style="border: 0px; margin: 10px auto 0px; padding: 0px; display: block; max-width: 100%; height: auto;"></p>
+<p style="border: 0px; margin-top: 0.63em; margin-bottom: 1.8em; padding-top: 0px; padding-bottom: 0px; counter-reset: list-1 0 list-2 0 list-3 0 list-4 0 list-5 0 list-6 0 list-7 0 list-8 0 list-9 0; color: rgb(25, 25, 25); font-family: &quot;PingFang SC&quot;, Arial, 微软雅黑, 宋体, simsun, sans-serif; text-align: left; background-color: rgb(255, 255, 255);"><span style="border: 0px; margin: 0px; padding: 0px;">我们从最基本的卷积操作开始说起。近些年来，卷积神经网络在很多领域上都取得了巨大的突破。而卷积核作为卷积神经网络的核心，通常被看做是在局部感受野上，将空间上（spatial）的信息和特征维度上（channel-wise）的信息进行聚合的信息聚合体。卷积神经网络由一系列卷积层、非线性层和下采样层构成，这样它们能够从全局感受野上去捕获图像的特征来进行图像的描述。</span></p>
+<p style="border: 0px; margin-top: 0.63em; margin-bottom: 1.8em; padding-top: 0px; padding-bottom: 0px; counter-reset: list-1 0 list-2 0 list-3 0 list-4 0 list-5 0 list-6 0 list-7 0 list-8 0 list-9 0; color: rgb(25, 25, 25); font-family: &quot;PingFang SC&quot;, Arial, 微软雅黑, 宋体, simsun, sans-serif; text-align: left; background-color: rgb(255, 255, 255);"><img src="http://img.mp.itc.cn/upload/20170802/92bc9ccb386c4e3c93a0e07d84bd7099_th.jpg" alt style="border: 0px; margin: 10px auto 0px; padding: 0px; display: block; max-width: 100%; height: auto;"></p>
+<p style="border: 0px; margin-top: 0.63em; margin-bottom: 1.8em; padding-top: 0px; padding-bottom: 0px; counter-reset: list-1 0 list-2 0 list-3 0 list-4 0 list-5 0 list-6 0 list-7 0 list-8 0 list-9 0; color: rgb(25, 25, 25); font-family: &quot;PingFang SC&quot;, Arial, 微软雅黑, 宋体, simsun, sans-serif; text-align: left; background-color: rgb(255, 255, 255);"><span style="border: 0px; margin: 0px; padding: 0px;">然而去学到一个性能非常强劲的网络是相当困难的，其难点来自于很多方面。最近很多工作被提出来从空间维度层面来提升网络的性能，如 Inception 结构中嵌入了多尺度信息，聚合多种不同感受野上的特征来获得性能增益；在 Inside-Outside 网络中考虑了空间中的上下文信息；还有将 Attention 机制引入到空间维度上，等等。这些工作都获得了相当不错的成果。</span></p>
+<p style="border: 0px; margin-top: 0.63em; margin-bottom: 1.8em; padding-top: 0px; padding-bottom: 0px; counter-reset: list-1 0 list-2 0 list-3 0 list-4 0 list-5 0 list-6 0 list-7 0 list-8 0 list-9 0; color: rgb(25, 25, 25); font-family: &quot;PingFang SC&quot;, Arial, 微软雅黑, 宋体, simsun, sans-serif; text-align: left; background-color: rgb(255, 255, 255);"><img src="http://img.mp.itc.cn/upload/20170802/ad22985cc0cb43278a40c067989165c5_th.jpg" alt style="border: 0px; margin: 10px auto 0px; padding: 0px; display: block; max-width: 100%; height: auto;"></p>
+<p style="border: 0px; margin-top: 0.63em; margin-bottom: 1.8em; padding-top: 0px; padding-bottom: 0px; counter-reset: list-1 0 list-2 0 list-3 0 list-4 0 list-5 0 list-6 0 list-7 0 list-8 0 list-9 0; color: rgb(25, 25, 25); font-family: &quot;PingFang SC&quot;, Arial, 微软雅黑, 宋体, simsun, sans-serif; text-align: left; background-color: rgb(255, 255, 255);"><span style="border: 0px; margin: 0px; padding: 0px;">我们可以看到，已经有很多工作在空间维度上来提升网络的性能。那么很自然想到，网络是否可以从其他层面来考虑去提升性能，比如考虑特征通道之间的关系？我们的工作就是基于这一点并提出了 Squeeze-and-Excitation Networks（简称 SENet）。在我们提出的结构中，Squeeze 和 Excitation 是两个非常关键的操作，所以我们以此来命名。我们的动机是希望显式地建模特征通道之间的相互依赖关系。另外，我们并不打算引入一个新的空间维度来进行特征通道间的融合，而是采用了一种全新的「特征重标定」策略。具体来说，就是通过学习的方式来自动获取到每个特征通道的重要程度，然后依照这个重要程度去提升有用的特征并抑制对当前任务用处不大的特征。</span></p>
+<p style="border: 0px; margin-top: 0.63em; margin-bottom: 1.8em; padding-top: 0px; padding-bottom: 0px; counter-reset: list-1 0 list-2 0 list-3 0 list-4 0 list-5 0 list-6 0 list-7 0 list-8 0 list-9 0; color: rgb(25, 25, 25); font-family: &quot;PingFang SC&quot;, Arial, 微软雅黑, 宋体, simsun, sans-serif; text-align: left; background-color: rgb(255, 255, 255);"><img src="http://img.mp.itc.cn/upload/20170802/247d198e8ef64a7fa040887b6f0ee0e0_th.jpg" alt style="border: 0px; margin: 10px auto 0px; padding: 0px; display: block; max-width: 100%; height: auto;"></p>
+<p style="border: 0px; margin-top: 0.63em; margin-bottom: 1.8em; padding-top: 0px; padding-bottom: 0px; counter-reset: list-1 0 list-2 0 list-3 0 list-4 0 list-5 0 list-6 0 list-7 0 list-8 0 list-9 0; color: rgb(25, 25, 25); font-family: &quot;PingFang SC&quot;, Arial, 微软雅黑, 宋体, simsun, sans-serif; text-align: left; background-color: rgb(255, 255, 255);"><span style="border: 0px; margin: 0px; padding: 0px;">上图是我们提出的 SE 模块的示意图。给定一个输入 x，其特征通道数为 c_1，通过一系列卷积等一般变换后得到一个特征通道数为 c_2 的特征。与传统的 CNN 不一样的是，接下来我们通过三个操作来重标定前面得到的特征。</span></p>
+<p style="border: 0px; margin-top: 0.63em; margin-bottom: 1.8em; padding-top: 0px; padding-bottom: 0px; counter-reset: list-1 0 list-2 0 list-3 0 list-4 0 list-5 0 list-6 0 list-7 0 list-8 0 list-9 0; color: rgb(25, 25, 25); font-family: &quot;PingFang SC&quot;, Arial, 微软雅黑, 宋体, simsun, sans-serif; text-align: left; background-color: rgb(255, 255, 255);"><span style="border: 0px; margin: 0px; padding: 0px;">首先是 Squeeze 操作，我们顺着空间维度来进行特征压缩，将每个二维的特征通道变成一个实数，这个实数某种程度上具有全局的感受野，并且输出的维度和输入的特征通道数相匹配。它表征着在特征通道上响应的全局分布，而且使得靠近输入的层也可以获得全局的感受野，这一点在很多任务中都是非常有用的。</span></p>
+<p style="border: 0px; margin-top: 0.63em; margin-bottom: 1.8em; padding-top: 0px; padding-bottom: 0px; counter-reset: list-1 0 list-2 0 list-3 0 list-4 0 list-5 0 list-6 0 list-7 0 list-8 0 list-9 0; color: rgb(25, 25, 25); font-family: &quot;PingFang SC&quot;, Arial, 微软雅黑, 宋体, simsun, sans-serif; text-align: left; background-color: rgb(255, 255, 255);"><span style="border: 0px; margin: 0px; padding: 0px;">其次是 Excitation 操作，它是一个类似于循环神经网络中门的机制。通过参数 w 来为每个特征通道生成权重，其中参数 w 被学习用来显式地建模特征通道间的相关性。</span></p>
+<p style="border: 0px; margin-top: 0.63em; margin-bottom: 1.8em; padding-top: 0px; padding-bottom: 0px; counter-reset: list-1 0 list-2 0 list-3 0 list-4 0 list-5 0 list-6 0 list-7 0 list-8 0 list-9 0; color: rgb(25, 25, 25); font-family: &quot;PingFang SC&quot;, Arial, 微软雅黑, 宋体, simsun, sans-serif; text-align: left; background-color: rgb(255, 255, 255);"><span style="border: 0px; margin: 0px; padding: 0px;">最后是一个 Reweight 的操作，我们将 Excitation 的输出的权重看做是进过特征选择后的每个特征通道的重要性，然后通过乘法逐通道加权到先前的特征上，完成在通道维度上的对原始特征的重标定。</span></p>
+<p style="border: 0px; margin-top: 0.63em; margin-bottom: 1.8em; padding-top: 0px; padding-bottom: 0px; counter-reset: list-1 0 list-2 0 list-3 0 list-4 0 list-5 0 list-6 0 list-7 0 list-8 0 list-9 0; color: rgb(25, 25, 25); font-family: &quot;PingFang SC&quot;, Arial, 微软雅黑, 宋体, simsun, sans-serif; text-align: left; background-color: rgb(255, 255, 255);"><img src="http://img.mp.itc.cn/upload/20170802/915f03dfc77a4f4f98aa3a8b1b6372e3_th.jpg" alt style="border: 0px; margin: 10px auto 0px; padding: 0px; display: block; max-width: 100%; height: auto;"></p>
+<p style="border: 0px; margin-top: 0.63em; margin-bottom: 1.8em; padding-top: 0px; padding-bottom: 0px; counter-reset: list-1 0 list-2 0 list-3 0 list-4 0 list-5 0 list-6 0 list-7 0 list-8 0 list-9 0; color: rgb(25, 25, 25); font-family: &quot;PingFang SC&quot;, Arial, 微软雅黑, 宋体, simsun, sans-serif; text-align: left; background-color: rgb(255, 255, 255);"><span style="border: 0px; margin: 0px; padding: 0px;">上左图是将 SE 模块嵌入到 Inception 结构的一个示例。方框旁边的维度信息代表该层的输出。</span></p>
+<p style="border: 0px; margin-top: 0.63em; margin-bottom: 1.8em; padding-top: 0px; padding-bottom: 0px; counter-reset: list-1 0 list-2 0 list-3 0 list-4 0 list-5 0 list-6 0 list-7 0 list-8 0 list-9 0; color: rgb(25, 25, 25); font-family: &quot;PingFang SC&quot;, Arial, 微软雅黑, 宋体, simsun, sans-serif; text-align: left; background-color: rgb(255, 255, 255);"><span style="border: 0px; margin: 0px; padding: 0px;">这里我们使用 global average pooling 作为 Squeeze 操作。紧接着两个 Fully Connected 层组成一个 Bottleneck 结构去建模通道间的相关性，并输出和输入特征同样数目的权重。我们首先将特征维度降低到输入的 1/16，然后经过 ReLu 激活后再通过一个 Fully Connected 层升回到原来的维度。这样做比直接用一个 Fully Connected 层的好处在于：1）具有更多的非线性，可以更好地拟合通道间复杂的相关性；2）极大地减少了参数量和计算量。然后通过一个 Sigmoid 的门获得 0~1 之间归一化的权重，最后通过一个 Scale 的操作来将归一化后的权重加权到每个通道的特征上。</span></p>
+<p style="border: 0px; margin-top: 0.63em; margin-bottom: 1.8em; padding-top: 0px; padding-bottom: 0px; counter-reset: list-1 0 list-2 0 list-3 0 list-4 0 list-5 0 list-6 0 list-7 0 list-8 0 list-9 0; color: rgb(25, 25, 25); font-family: &quot;PingFang SC&quot;, Arial, 微软雅黑, 宋体, simsun, sans-serif; text-align: left; background-color: rgb(255, 255, 255);"><span style="border: 0px; margin: 0px; padding: 0px;">除此之外，SE 模块还可以嵌入到含有 skip-connections 的模块中。上右图是将 SE 嵌入到 ResNet 模块中的一个例子，操作过程基本和 SE-Inception 一样，只不过是在 Addition 前对分支上 Residual 的特征进行了特征重标定。如果对 Addition 后主支上的特征进行重标定，由于在主干上存在 0~1 的 scale 操作，在网络较深 BP 优化时就会在靠近输入层容易出现梯度消散的情况，导致模型难以优化。</span></p>
+<p style="border: 0px; margin-top: 0.63em; margin-bottom: 1.8em; padding-top: 0px; padding-bottom: 0px; counter-reset: list-1 0 list-2 0 list-3 0 list-4 0 list-5 0 list-6 0 list-7 0 list-8 0 list-9 0; color: rgb(25, 25, 25); font-family: &quot;PingFang SC&quot;, Arial, 微软雅黑, 宋体, simsun, sans-serif; text-align: left; background-color: rgb(255, 255, 255);"><span style="border: 0px; margin: 0px; padding: 0px;">目前大多数的主流网络都是基于这两种类似的单元通过 repeat 方式叠加来构造的。由此可见，SE 模块可以嵌入到现在几乎所有的网络结构中。通过在原始网络结构的 building block 单元中嵌入 SE 模块，我们可以获得不同种类的 SENet。如 SE-BN-Inception、SE-ResNet、SE-ReNeXt、SE-Inception-ResNet-v2 等等。</span></p>
+<p style="border: 0px; margin-top: 0.63em; margin-bottom: 1.8em; padding-top: 0px; padding-bottom: 0px; counter-reset: list-1 0 list-2 0 list-3 0 list-4 0 list-5 0 list-6 0 list-7 0 list-8 0 list-9 0; color: rgb(25, 25, 25); font-family: &quot;PingFang SC&quot;, Arial, 微软雅黑, 宋体, simsun, sans-serif; text-align: left; background-color: rgb(255, 255, 255);"><img src="http://img.mp.itc.cn/upload/20170802/c7cda1c11e0b4adf8806bf368ad28e4a_th.jpg" style="border: 0px; margin: 10px auto 0px; padding: 0px; display: block; max-width: 100%; height: auto;" alt></p>
+<p style="border: 0px; margin-top: 0.63em; margin-bottom: 1.8em; padding-top: 0px; padding-bottom: 0px; counter-reset: list-1 0 list-2 0 list-3 0 list-4 0 list-5 0 list-6 0 list-7 0 list-8 0 list-9 0; color: rgb(25, 25, 25); font-family: &quot;PingFang SC&quot;, Arial, 微软雅黑, 宋体, simsun, sans-serif; text-align: left; background-color: rgb(255, 255, 255);"><span style="border: 0px; margin: 0px; padding: 0px;">从上面的介绍中可以发现，SENet 构造非常简单，而且很容易被部署，不需要引入新的函数或者层。除此之外，它还在模型和计算复杂度上具有良好的特性。拿 ResNet-50 和 SE-ResNet-50 对比举例来说，SE-ResNet-50 相对于 ResNet-50 有着 10% 模型参数的增长。额外的模型参数都存在于 Bottleneck 设计的两个 Fully Connected 中，由于 ResNet 结构中最后一个 stage 的特征通道数目为 2048，导致模型参数有着较大的增长，实验发现移除掉最后一个 stage 中 3 个 build block 上的 SE 设定，可以将 10% 参数量的增长减少到 2%。此时模型的精度几乎无损失。</span></p>
+<p style="border: 0px; margin-top: 0.63em; margin-bottom: 1.8em; padding-top: 0px; padding-bottom: 0px; counter-reset: list-1 0 list-2 0 list-3 0 list-4 0 list-5 0 list-6 0 list-7 0 list-8 0 list-9 0; color: rgb(25, 25, 25); font-family: &quot;PingFang SC&quot;, Arial, 微软雅黑, 宋体, simsun, sans-serif; text-align: left; background-color: rgb(255, 255, 255);"><span style="border: 0px; margin: 0px; padding: 0px;">另外，由于在现有的 GPU 实现中，都没有对 global pooling 和较小计算量的 Fully Connected 进行优化，这导致了在 GPU 上的运行时间 SE-ResNet-50 相对于 ResNet-50 有着约 10% 的增长。尽管如此，其理论增长的额外计算量仅仅不到 1%，这与其在 CPU 运行时间上的增长相匹配（~2%）。可以看出，在现有网络架构中嵌入 SE 模块而导致额外的参数和计算量的增长微乎其微。</span></p>
+<p style="border: 0px; margin-top: 0.63em; margin-bottom: 1.8em; padding-top: 0px; padding-bottom: 0px; counter-reset: list-1 0 list-2 0 list-3 0 list-4 0 list-5 0 list-6 0 list-7 0 list-8 0 list-9 0; color: rgb(25, 25, 25); font-family: &quot;PingFang SC&quot;, Arial, 微软雅黑, 宋体, simsun, sans-serif; text-align: left; background-color: rgb(255, 255, 255);"><img src="http://img.mp.itc.cn/upload/20170802/d9f2ce80c6a74cfab5d1bba7774e8dc9_th.jpg" alt style="border: 0px; margin: 10px auto 0px; padding: 0px; display: block; max-width: 100%; height: auto;"></p>
+<p style="border: 0px; margin-top: 0.63em; margin-bottom: 1.8em; padding-top: 0px; padding-bottom: 0px; counter-reset: list-1 0 list-2 0 list-3 0 list-4 0 list-5 0 list-6 0 list-7 0 list-8 0 list-9 0; color: rgb(25, 25, 25); font-family: &quot;PingFang SC&quot;, Arial, 微软雅黑, 宋体, simsun, sans-serif; text-align: left; background-color: rgb(255, 255, 255);"><span style="border: 0px; margin: 0px; padding: 0px;">在训练中，我们使用了一些常见的数据增强方法和 Li Shen 提出的均衡数据策略。为了提高训练效率，我们使用了我们自己优化的分布式训练系统 ROCS, 并采用了更大的 batch-size 和初始学习率。所有的模型都是从头开始训练的。</span></p>
+<p style="border: 0px; margin-top: 0.63em; margin-bottom: 1.8em; padding-top: 0px; padding-bottom: 0px; counter-reset: list-1 0 list-2 0 list-3 0 list-4 0 list-5 0 list-6 0 list-7 0 list-8 0 list-9 0; color: rgb(25, 25, 25); font-family: &quot;PingFang SC&quot;, Arial, 微软雅黑, 宋体, simsun, sans-serif; text-align: left; background-color: rgb(255, 255, 255);"><img src="http://img.mp.itc.cn/upload/20170802/fe772bea278344ae9d8448f4722d77a2_th.jpg" style="border: 0px; margin: 10px auto 0px; padding: 0px; display: block; max-width: 100%; height: auto;" alt></p>
+<p style="border: 0px; margin-top: 0.63em; margin-bottom: 1.8em; padding-top: 0px; padding-bottom: 0px; counter-reset: list-1 0 list-2 0 list-3 0 list-4 0 list-5 0 list-6 0 list-7 0 list-8 0 list-9 0; color: rgb(25, 25, 25); font-family: &quot;PingFang SC&quot;, Arial, 微软雅黑, 宋体, simsun, sans-serif; text-align: left; background-color: rgb(255, 255, 255);"><span style="border: 0px; margin: 0px; padding: 0px;">接下来，为了验证 SENets 的有效性，我们将在 ImageNet 数据集上进行实验，并从两个方面来进行论证。一个是性能的增益 vs. 网络的深度； 另一个是将 SE 嵌入到现有的不同网络中进行结果对比。另外，我们也会展示在 ImageNet 竞赛中的结果。</span></p>
+<p style="border: 0px; margin-top: 0.63em; margin-bottom: 1.8em; padding-top: 0px; padding-bottom: 0px; counter-reset: list-1 0 list-2 0 list-3 0 list-4 0 list-5 0 list-6 0 list-7 0 list-8 0 list-9 0; color: rgb(25, 25, 25); font-family: &quot;PingFang SC&quot;, Arial, 微软雅黑, 宋体, simsun, sans-serif; text-align: left; background-color: rgb(255, 255, 255);"><img src="http://img.mp.itc.cn/upload/20170802/d4c143a4b3cd4dbf87ee04a9d8025b8a_th.jpg" style="border: 0px; margin: 10px auto 0px; padding: 0px; display: block; max-width: 100%; height: auto;" alt></p>
+<p style="border: 0px; margin-top: 0.63em; margin-bottom: 1.8em; padding-top: 0px; padding-bottom: 0px; counter-reset: list-1 0 list-2 0 list-3 0 list-4 0 list-5 0 list-6 0 list-7 0 list-8 0 list-9 0; color: rgb(25, 25, 25); font-family: &quot;PingFang SC&quot;, Arial, 微软雅黑, 宋体, simsun, sans-serif; text-align: left; background-color: rgb(255, 255, 255);"><span style="border: 0px; margin: 0px; padding: 0px;">首先我们来看一下网络的深度对 SE 的影响。上表分别展示了 ResNet-50、ResNet-101、ResNet-152 和嵌入 SE 模型的结果。第一栏 Original 是原作者实现的结果，为了进行公平的比较，我们在 ROCS 上重新进行了实验得到 Our re-implementation 的结果（ps. 我们重实现的精度往往比原 paper 中要高一些）。最后一栏 SE-module 是指嵌入了 SE 模块的结果，它的训练参数和第二栏 Our re-implementation 一致。括号中的红色数值是指相对于 Our re-implementation 的精度提升的幅值。</span></p>
+<p style="border: 0px; margin-top: 0.63em; margin-bottom: 1.8em; padding-top: 0px; padding-bottom: 0px; counter-reset: list-1 0 list-2 0 list-3 0 list-4 0 list-5 0 list-6 0 list-7 0 list-8 0 list-9 0; color: rgb(25, 25, 25); font-family: &quot;PingFang SC&quot;, Arial, 微软雅黑, 宋体, simsun, sans-serif; text-align: left; background-color: rgb(255, 255, 255);"><span style="border: 0px; margin: 0px; padding: 0px;">从上表可以看出，SE-ResNets 在各种深度上都远远超过了其对应的没有 SE 的结构版本的精度，这说明无论网络的深度如何，SE 模块都能够给网络带来性能上的增益。值得一提的是，SE-ResNet-50 可以达到和 ResNet-101 一样的精度；更甚，SE-ResNet-101 远远地超过了更深的 ResNet-152。</span></p>
+<p style="border: 0px; margin-top: 0.63em; margin-bottom: 1.8em; padding-top: 0px; padding-bottom: 0px; counter-reset: list-1 0 list-2 0 list-3 0 list-4 0 list-5 0 list-6 0 list-7 0 list-8 0 list-9 0; color: rgb(25, 25, 25); font-family: &quot;PingFang SC&quot;, Arial, 微软雅黑, 宋体, simsun, sans-serif; text-align: left; background-color: rgb(255, 255, 255);"><img src="http://img.mp.itc.cn/upload/20170802/80ce36d3238c436da1186a15ecb03f87_th.jpg" alt style="border: 0px; margin: 10px auto 0px; padding: 0px; display: block; max-width: 100%; height: auto;"></p>
+<p style="border: 0px; margin-top: 0.63em; margin-bottom: 1.8em; padding-top: 0px; padding-bottom: 0px; counter-reset: list-1 0 list-2 0 list-3 0 list-4 0 list-5 0 list-6 0 list-7 0 list-8 0 list-9 0; color: rgb(25, 25, 25); font-family: &quot;PingFang SC&quot;, Arial, 微软雅黑, 宋体, simsun, sans-serif; text-align: left; background-color: rgb(255, 255, 255);"><span style="border: 0px; margin: 0px; padding: 0px;">上图展示了 ResNet-50 和 ResNet-152 以及它们对应的嵌入 SE 模块的网络在 ImageNet 上的训练过程，可以明显地看出加入了 SE 模块的网络收敛到更低的错误率上。</span></p>
+<p style="border: 0px; margin-top: 0.63em; margin-bottom: 1.8em; padding-top: 0px; padding-bottom: 0px; counter-reset: list-1 0 list-2 0 list-3 0 list-4 0 list-5 0 list-6 0 list-7 0 list-8 0 list-9 0; color: rgb(25, 25, 25); font-family: &quot;PingFang SC&quot;, Arial, 微软雅黑, 宋体, simsun, sans-serif; text-align: left; background-color: rgb(255, 255, 255);"><img src="http://img.mp.itc.cn/upload/20170802/f05e4627a7b74413a3e2679e5338413a_th.jpg" style="border: 0px; margin: 10px auto 0px; padding: 0px; display: block; max-width: 100%; height: auto;" alt></p>
+<p style="border: 0px; margin-top: 0.63em; margin-bottom: 1.8em; padding-top: 0px; padding-bottom: 0px; counter-reset: list-1 0 list-2 0 list-3 0 list-4 0 list-5 0 list-6 0 list-7 0 list-8 0 list-9 0; color: rgb(25, 25, 25); font-family: &quot;PingFang SC&quot;, Arial, 微软雅黑, 宋体, simsun, sans-serif; text-align: left; background-color: rgb(255, 255, 255);"><span style="border: 0px; margin: 0px; padding: 0px;">另外，为了验证 SE 模块的泛化能力，我们也在除 ResNet 以外的结构上进行了实验。从上表可以看出，将 SE 模块嵌入到 ResNeXt、BN-Inception、Inception-ResNet-v2 上均获得了不菲的增益效果。由此看出，SE 的增益效果不仅仅局限于某些特殊的网络结构，它具有很强的泛化性。</span></p>
+<p style="border: 0px; margin-top: 0.63em; margin-bottom: 1.8em; padding-top: 0px; padding-bottom: 0px; counter-reset: list-1 0 list-2 0 list-3 0 list-4 0 list-5 0 list-6 0 list-7 0 list-8 0 list-9 0; color: rgb(25, 25, 25); font-family: &quot;PingFang SC&quot;, Arial, 微软雅黑, 宋体, simsun, sans-serif; text-align: left; background-color: rgb(255, 255, 255);"><img src="http://img.mp.itc.cn/upload/20170802/0cd967fd695f44bfbd9ed71680a0b767_th.jpg" alt style="border: 0px; margin: 10px auto 0px; padding: 0px; display: block; max-width: 100%; height: auto;"></p>
+<p style="border: 0px; margin-top: 0.63em; margin-bottom: 1.8em; padding-top: 0px; padding-bottom: 0px; counter-reset: list-1 0 list-2 0 list-3 0 list-4 0 list-5 0 list-6 0 list-7 0 list-8 0 list-9 0; color: rgb(25, 25, 25); font-family: &quot;PingFang SC&quot;, Arial, 微软雅黑, 宋体, simsun, sans-serif; text-align: left; background-color: rgb(255, 255, 255);"><span style="border: 0px; margin: 0px; padding: 0px;">上图展示的是 SE 嵌入在 ResNeXt-50 和 Inception-ResNet-v2 的训练过程对比。</span></p>
+<p style="border: 0px; margin-top: 0.63em; margin-bottom: 1.8em; padding-top: 0px; padding-bottom: 0px; counter-reset: list-1 0 list-2 0 list-3 0 list-4 0 list-5 0 list-6 0 list-7 0 list-8 0 list-9 0; color: rgb(25, 25, 25); font-family: &quot;PingFang SC&quot;, Arial, 微软雅黑, 宋体, simsun, sans-serif; text-align: left; background-color: rgb(255, 255, 255);"><img src="http://img.mp.itc.cn/upload/20170802/a145b691c02f43b4b5832ef41804cc51_th.jpg" alt style="border: 0px; margin: 10px auto 0px; padding: 0px; display: block; max-width: 100%; height: auto;"></p>
+<p style="border: 0px; margin-top: 0.63em; margin-bottom: 1.8em; padding-top: 0px; padding-bottom: 0px; counter-reset: list-1 0 list-2 0 list-3 0 list-4 0 list-5 0 list-6 0 list-7 0 list-8 0 list-9 0; color: rgb(25, 25, 25); font-family: &quot;PingFang SC&quot;, Arial, 微软雅黑, 宋体, simsun, sans-serif; text-align: left; background-color: rgb(255, 255, 255);"><span style="border: 0px; margin: 0px; padding: 0px;">在上表中我们列出了一些最新的在 ImageNet 分类上的网络的结果。其中我们的 SENet 实质上是一个 SE-ResNeXt-152（64x4d），在 ResNeXt-152 上嵌入 SE 模块，并做了一些其他修改和训练优化上的小技巧，这些我们会在后续公开的论文中进行详细介绍。可以看出 SENet 获得了迄今为止在 single-crop 上最好的性能。</span></p>
+<p style="border: 0px; margin-top: 0.63em; margin-bottom: 1.8em; padding-top: 0px; padding-bottom: 0px; counter-reset: list-1 0 list-2 0 list-3 0 list-4 0 list-5 0 list-6 0 list-7 0 list-8 0 list-9 0; color: rgb(25, 25, 25); font-family: &quot;PingFang SC&quot;, Arial, 微软雅黑, 宋体, simsun, sans-serif; text-align: left; background-color: rgb(255, 255, 255);"><img src="http://img.mp.itc.cn/upload/20170802/1d729a499e774822a4cef9c8c809ea6c_th.jpg" alt style="border: 0px; margin: 10px auto 0px; padding: 0px; display: block; max-width: 100%; height: auto;"></p>
+<p style="border: 0px; margin-top: 0.63em; margin-bottom: 1.8em; padding-top: 0px; padding-bottom: 0px; counter-reset: list-1 0 list-2 0 list-3 0 list-4 0 list-5 0 list-6 0 list-7 0 list-8 0 list-9 0; color: rgb(25, 25, 25); font-family: &quot;PingFang SC&quot;, Arial, 微软雅黑, 宋体, simsun, sans-serif; text-align: left; background-color: rgb(255, 255, 255);"><span style="border: 0px; margin: 0px; padding: 0px;">最后，在 ILSVRC 2017 竞赛中，我们的融合模型在测试集上获得了 2.251% Top-5 错误率。对比于去年第一名的结果 2.991%, 我们获得了将近 25% 的精度提升。</span></p>
+<p style="border: 0px; margin-top: 0.63em; margin-bottom: 1.8em; padding-top: 0px; padding-bottom: 0px; counter-reset: list-1 0 list-2 0 list-3 0 list-4 0 list-5 0 list-6 0 list-7 0 list-8 0 list-9 0; color: rgb(25, 25, 25); font-family: &quot;PingFang SC&quot;, Arial, 微软雅黑, 宋体, simsun, sans-serif; text-align: left; background-color: rgb(255, 255, 255);"><span style="border: 0px; margin: 0px; padding: 0px;">更多技术上和实验上的细节将会展示在即将公开的论文中。</span></p>
+<div>
+ <span style="border: 0px; margin: 0px; padding: 0px;"><br></span>
+</div>
+<br>
+                </div>
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作!</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    تبرّع
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="XD Lv WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/10/17/NEUROSCIENCE/" rel="prev" title="NEUROSCIENCE">
+      <i class="fa fa-chevron-left"></i> NEUROSCIENCE
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/11/03/DeviceTree/" rel="next" title="DeviceTree">
+      DeviceTree <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          المحتويات
+        </li>
+        <li class="sidebar-nav-overview">
+          عام
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">XD Lv</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-name">المقالات</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">التصنيفات</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">الوسوم</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/lxdfrank" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;lxdfrank" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XD Lv</span>
+</div>
+  <div class="powered-by">تطبيق الموقع <a href="https://github.com/lxdfrank" rel="noopener" target="_blank">XD Lv</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

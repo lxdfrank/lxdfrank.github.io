@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="教程系列">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Xilinx">
+<meta property="og:url" content="http://yoursite.com/2020/09/12/Xilinx/index.html">
+<meta property="og:site_name" content="一粒尘埃">
+<meta property="og:description" content="教程系列">
+<meta property="article:published_time" content="2020-09-12T08:56:29.000Z">
+<meta property="article:modified_time" content="2021-02-21T09:08:23.060Z">
+<meta property="article:author" content="XD Lv">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/09/12/Xilinx/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>Xilinx | 一粒尘埃</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="تشغيل شريط التصفح">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">一粒尘埃</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>الوسوم</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>التصنيفات</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>الأرشيفات</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/12/Xilinx/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="XD Lv">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一粒尘埃">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Xilinx
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">نُشر في</span>
+
+              <time title="أُنشأ: 2020-09-12 16:56:29" itemprop="dateCreated datePublished" datetime="2020-09-12T16:56:29+08:00">2020-09-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">عُدل في</span>
+                <time title="عُدل: 2021-02-21 17:08:23" itemprop="dateModified" datetime="2021-02-21T17:08:23+08:00">2021-02-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="教程系列"><a href="#教程系列" class="headerlink" title="教程系列"></a>教程系列</h2><a id="more"></a>
+
+<h3 id="Ubuntu环境安装"><a href="#Ubuntu环境安装" class="headerlink" title="Ubuntu环境安装"></a>Ubuntu环境安装</h3><p>双向文件传输 共享文件夹 复制拖拽 增强工具安装<br>增强工具第一次安装不上可以弹出iso重新安装<br>可设置ubuntu熄屏时间</p>
+<h3 id="petalinux安装（需要和vivado版本对应）"><a href="#petalinux安装（需要和vivado版本对应）" class="headerlink" title="petalinux安装（需要和vivado版本对应）"></a>petalinux安装（需要和vivado版本对应）</h3><p>设置安装路径 /opt/pkg/petalinux<br>petalinux-v2017.4-final-installer.run  /文件夹</p>
+<h3 id="linux-vivado安装（需要和petalinux版本对应）"><a href="#linux-vivado安装（需要和petalinux版本对应）" class="headerlink" title="linux vivado安装（需要和petalinux版本对应）"></a>linux vivado安装（需要和petalinux版本对应）</h3><p>vivado安装或者安装gcc-linaro-arm-linux-gnueabihf</p>
+<h3 id="petalinux使用"><a href="#petalinux使用" class="headerlink" title="petalinux使用"></a>petalinux使用</h3><p>开启编译环境：source /opt/Xilinx/Vivado/2017.4/settings64.sh<br>开启系统环境：source /opt/pkg/petalinux/settings.sh<br>创建Block Design并添加ZYNQ Processing System并配置系统<br>拷贝.sdk文件夹到linux系统中（不要放在共享文件夹中）<br>~ /peta_pro<br>petalinux-create<br>petalinux-config 进行配置<br>petalinux-config -c kernel<br>petalinux-config -c rootfs<br>petalinux-build</p>
+<h4 id="移植Vivado生成的硬件程序到petalinux"><a href="#移植Vivado生成的硬件程序到petalinux" class="headerlink" title="移植Vivado生成的硬件程序到petalinux"></a>移植Vivado生成的硬件程序到petalinux</h4><p>在linux工作空间中创建工作目录<br>复制生成的.sdk文件夹到linux工作目录(可以在同一个工程下面选择同的sdk文件进行内核配置，这样可能节省内核配置时间)<br>执行创建工程petalinux-create –type project –template zynq –name Radar_peta<br>petalinux-config –get-hw-description ../Bram5.sdk<br>petalinux-config -c kernel<br>petalinux-config -c rootfs<br>自定义设备树<br>sudo gedit project-spec/meta-user/recipes-bsp/device-tree/files/system-user.dtsi<br>petalinux-build<br>petalinux-package –boot –fsbl ./images/linux/zynq_fsbl.elf –fpga –uboot –force<br>复制images/linux文件夹下面的UBOOT.bin和image.ub，system.dts文件到SD卡<br>ifconfig eth0 192.168.0.2 netmask 255.255.255.0 up</p>
+<h3 id="内核移植"><a href="#内核移植" class="headerlink" title="内核移植"></a>内核移植</h3><h4 id="内核移植编译"><a href="#内核移植编译" class="headerlink" title="内核移植编译"></a>内核移植编译</h4><p>make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- distclean<br>make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- xilinx_zynq_defconfig<br>make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- menuconfig<br>make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- all -j16</p>
+<h4 id="petalinux应用程序编译"><a href="#petalinux应用程序编译" class="headerlink" title="petalinux应用程序编译"></a>petalinux应用程序编译</h4><p>配置ip使用scp进行文件传输<br>设备树自动生成注意查看其地址 pl.dtsi在创建的工程中<br>控制led<br><a href="https://blog.csdn.net/leon_zeng0/article/details/84172584" target="_blank" rel="noopener">https://blog.csdn.net/leon_zeng0/article/details/84172584</a><br><a href="https://blog.csdn.net/u013029731/article/details/85042431" target="_blank" rel="noopener">https://blog.csdn.net/u013029731/article/details/85042431</a><br>/dev/mem/<br><a href="https://www.cnblogs.com/cxchanpin/p/7230743.html" target="_blank" rel="noopener">https://www.cnblogs.com/cxchanpin/p/7230743.html</a></p>
+<h4 id="petalinux中断使用（相应设备驱动需要在相应的内核底下编译）"><a href="#petalinux中断使用（相应设备驱动需要在相应的内核底下编译）" class="headerlink" title="petalinux中断使用（相应设备驱动需要在相应的内核底下编译）"></a>petalinux中断使用（相应设备驱动需要在相应的内核底下编译）</h4><p>工程文件：/home/allen/peta_pro/peta_pro</p>
+<p>ls /proc/device-tree/amba_pl/<br>先生成硬件文件，直接修改设备树，编写设备驱动，<br><a href="https://blog.csdn.net/seavensky_curry/article/details/82978475" target="_blank" rel="noopener">https://blog.csdn.net/seavensky_curry/article/details/82978475</a><br>编译驱动<a href="https://blog.csdn.net/weixin_43873379/article/details/102625054" target="_blank" rel="noopener">https://blog.csdn.net/weixin_43873379/article/details/102625054</a><br>modprobe和insmod加载设备驱动<br>创建设备节点<br>解压内核到ubuntu中并编译内核，要不驱动没法编译，将例程中的linux移植到ubuntu中<br>在petalinux-config<br>将内核添加到petalinux工程中<br>使用petalinux-create -t modules –name keyirq创建modules（将驱动编译进内核）<br>修改文件夹下面的文件<br>petalinux-config -c rootfs 选择modules-&gt;irqkey<br>petalinux-build<br>驱动生成位置<br>build/tmp/sysroots/plnx_arm/lib/modules/4.9.0-xilinx/extra/<br>自定义设备树位置<br>sudo gedit project-spec/meta-user/recipes-bsp/device-tree/files/system-user.dtsi<br>petalinux-package –boot –fsbl ./images/linux/zynq_fsbl.elf –fpga ./images/linux/design_1_wrapper.bit –u-boot –force<br>petalinux-config -c kernel</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-&gt;Device Drivers</span><br><span class="line">  -&gt;Userspace I&#x2F;O drivers</span><br><span class="line">   -&gt;Userspace I&#x2F;O platform driver with generic IRQ handling</span><br><span class="line">   -&gt;Userspace platform driver with generic irq and dynamic memo</span><br></pre></td></tr></table></figure>
+
+<p>最终参考版本<br><a href="https://blog.csdn.net/qq_30307853/article/details/100513971" target="_blank" rel="noopener">https://blog.csdn.net/qq_30307853/article/details/100513971</a><br><a href="https://blog.csdn.net/seavensky_curry/article/details/82978475" target="_blank" rel="noopener">https://blog.csdn.net/seavensky_curry/article/details/82978475</a><br><a href="http://derekmolloy.ie/kernel-gpio-programming-buttons-and-leds/" target="_blank" rel="noopener">http://derekmolloy.ie/kernel-gpio-programming-buttons-and-leds/</a><br>led设备驱动<br><a href="https://blog.csdn.net/h244259402/article/details/83990698" target="_blank" rel="noopener">https://blog.csdn.net/h244259402/article/details/83990698</a></p>
+<h4 id="驱动编写"><a href="#驱动编写" class="headerlink" title="驱动编写"></a>驱动编写</h4><p><a href="https://blog.csdn.net/zjy900507/article/details/78667899?utm_medium=distribute.pc_aggpage_search_result.none-task-blog-2~all~first_rank_v2~rank_v25-3-78667899.nonecase&amp;utm_term=gpio%E6%8C%89%E9%94%AE%E4%B8%AD%E6%96%AD%20linux" target="_blank" rel="noopener">https://blog.csdn.net/zjy900507/article/details/78667899?utm_medium=distribute.pc_aggpage_search_result.none-task-blog-2~all~first_rank_v2~rank_v25-3-78667899.nonecase&amp;utm_term=gpio%E6%8C%89%E9%94%AE%E4%B8%AD%E6%96%AD%20linux</a></p>
+<h3 id="PL和PS通过bram进行双向通信"><a href="#PL和PS通过bram进行双向通信" class="headerlink" title="PL和PS通过bram进行双向通信"></a>PL和PS通过bram进行双向通信</h3><p>创建AXI Bram Controller 使用自动连接<br>PS双向数据传送<br>文件位置Bram5双向PSBram<br><a href="https://blog.csdn.net/luhao806/article/details/77909158" target="_blank" rel="noopener">https://blog.csdn.net/luhao806/article/details/77909158</a><br><a href="https://blog.csdn.net/rzjmpb/article/details/50365915#" target="_blank" rel="noopener">https://blog.csdn.net/rzjmpb/article/details/50365915#</a><br>PL自定义AXI总线内核<br>ARM分别往AXI四个寄存器写数字(PL_BRAM_CTRL_mWriteReg(PL_RAM_BASE, 每个寄存器的偏移地址 , 数据))<br>ARM往Bram寄存器写入数据(XBram_WriteReg(XPAR_BRAM_0_BASEADDR, 寄存器偏移地址 , 数据))<br><a href="https://www.amobbs.com/thread-5737330-1-1.html" target="_blank" rel="noopener">https://www.amobbs.com/thread-5737330-1-1.html</a><br><a href="https://blog.csdn.net/botao_li/article/details/86301995" target="_blank" rel="noopener">https://blog.csdn.net/botao_li/article/details/86301995</a></p>
+<h3 id="FPGA和PS联合编程"><a href="#FPGA和PS联合编程" class="headerlink" title="FPGA和PS联合编程"></a>FPGA和PS联合编程</h3><p>FPGA使用PS时钟input wire, output wire clk,<br>.v文件作为上层文件调用封装好的版图<br><a href="https://blog.csdn.net/taowei1314520/article/details/77939396" target="_blank" rel="noopener">https://blog.csdn.net/taowei1314520/article/details/77939396</a><br>.v作为模块在工程中<br>工程文件位置Project/Software/RadarBoard/test/Bram4<br>注意修改xdc引脚分配文件<br><a href="https://www.cnblogs.com/pangshian/p/13357433.html" target="_blank" rel="noopener">https://www.cnblogs.com/pangshian/p/13357433.html</a><br><a href="https://bbs.elecfans.com/jishu_485735_1_1.html" target="_blank" rel="noopener">https://bbs.elecfans.com/jishu_485735_1_1.html</a></p>
+<h3 id="petalinux中断最终版"><a href="#petalinux中断最终版" class="headerlink" title="petalinux中断最终版"></a>petalinux中断最终版</h3><h4 id="PL硬件设计编写SDK测试文件确定"><a href="#PL硬件设计编写SDK测试文件确定" class="headerlink" title="PL硬件设计编写SDK测试文件确定"></a>PL硬件设计编写SDK测试文件确定</h4><p>内核层可通过kill_fasync异步发送，kill_fasync发送方法网上资料很多，借用即可。<br>用户层通过signal(MYSIG, sig_handler)绑定信号和回调函数<br>共一下几个步骤：<br>        signal(MYSIG, sig_handler);<br>        fcntl(fd, F_SETOWN, getpid());<br>        f_flags = fcntl(fd, F_GETFL);<br>        fcntl(fd, F_SETFL,  f_flags | O_NONBLOCK | FASYNC);<br>        fcntl(fd, F_SETSIG, MYSIG);//如果要发送实时信号（MYSIG可自行定义），则需要通过fcntl设置<br><a href="https://blog.csdn.net/hope11011/article/details/49670021" target="_blank" rel="noopener">参考资料</a></p>
+<h3 id="PL和PS数据交互方式及其优缺点"><a href="#PL和PS数据交互方式及其优缺点" class="headerlink" title="PL和PS数据交互方式及其优缺点"></a>PL和PS数据交互方式及其优缺点</h3><p>常用的PL和PS数据交互方式根据交互数据量的大小有以下几种方式：<br>1、bit或Byte级别的交互，常用于设备状态交互<br>使用ram，AXI，RAM操作复杂，AXI操作简单，速度更快<br>2、100MB以下的数据交互<br>使用RAM，目前本人可以达到90MB<br>3、200MB以下的数据交互<br>使用AXIDMA进行数据交互，ZYNQ最快可以达到400M，本人使用US+，目前只能达到220M，如果PS端在DMA后端使用乒乓接受，应该速率更快，没有看到官方文档里面标注US+的AXIDMA最高速率<br>4、500M以上的数交互<br>使用HP总线，单个通道可以达到1GB。</p>
+<h3 id="Petalinux，PL通信"><a href="#Petalinux，PL通信" class="headerlink" title="Petalinux，PL通信"></a>Petalinux，PL通信</h3><p>工程文件：F:/test/FPGA/</p>
+<h3 id="BOA"><a href="#BOA" class="headerlink" title="BOA"></a>BOA</h3><p>1.download boa文件<br>2.修改 #define TIMEZONE_OFFSET(foo) foo##-&gt;tm_gmtoff  避免编译器无法识别<br>=&gt;     #define TIMEZONE_OFFSET(foo) (foo)-&gt;tm_gmtoff<br>3.在系统的etc文件夹下面，创建/etc/boa用来存放boa.conf<br>创建目录<br>3.修改生成的Makefile中的编译器<br>加载css mime.type text.plain改为text/css<br>二。GCI</p>
+<p>安装arm-linux-gcc<br>export PATH=/root/ZYNQ_gcc/gcc-linaro-arm-linux-gnueabihf-4.9-2014.07_linux/bin:$PATH<br>arm-arago-linux-gnueabi-gcc<br><a href="https://blog.csdn.net/kunkliu/article/details/79813121" target="_blank" rel="noopener">https://blog.csdn.net/kunkliu/article/details/79813121</a></p>
+<p>boa及CGI移植到FPGA<br><a href="https://blog.csdn.net/weixin_41922484/article/details/103343012" target="_blank" rel="noopener">https://blog.csdn.net/weixin_41922484/article/details/103343012</a><br><a href="https://blog.csdn.net/a642960662/article/details/66473794" target="_blank" rel="noopener">https://blog.csdn.net/a642960662/article/details/66473794</a><br><a href="https://github.com/lingfuyi/cgic" target="_blank" rel="noopener">参考文章</a><br><a href="http://www.360doc.com/content/14/0408/22/16459198_367364176.shtml" target="_blank" rel="noopener">http://www.360doc.com/content/14/0408/22/16459198_367364176.shtml</a></p>
+<h3 id="用到的参考链接"><a href="#用到的参考链接" class="headerlink" title="用到的参考链接"></a>用到的参考链接</h3><p>vivado加速编译</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># set_param general.maxThreads 8 </span><br><span class="line"># get_param general.maxThreads</span><br></pre></td></tr></table></figure>
+<p><a href="https://www.pianshen.com/article/9500180462/" target="_blank" rel="noopener">https://www.pianshen.com/article/9500180462/</a><br>AXI PS PL数据通信<br>bram和ram 以及DDR的优缺点<br><a href="https://blog.csdn.net/qq_31806049/article/details/99428777" target="_blank" rel="noopener">https://blog.csdn.net/qq_31806049/article/details/99428777</a><br>linux读写bram数据<br>不用修改设备树直接调用open /dev/mem<br><a href="https://blog.csdn.net/yohe12/article/details/105264853" target="_blank" rel="noopener">https://blog.csdn.net/yohe12/article/details/105264853</a><br><a href="https://blog.csdn.net/STR618/article/details/84728869" target="_blank" rel="noopener">https://blog.csdn.net/STR618/article/details/84728869</a><br>PL端读写bram<br><a href="https://blog.csdn.net/weixin_43941525/article/details/90408941" target="_blank" rel="noopener">https://blog.csdn.net/weixin_43941525/article/details/90408941</a><br>xilinx github：<a href="https://github.com/Xilinx" target="_blank" rel="noopener">https://github.com/Xilinx</a><br>PL读写DDR：<br><a href="https://blog.csdn.net/weixin_36474809/article/details/85111550" target="_blank" rel="noopener">https://blog.csdn.net/weixin_36474809/article/details/85111550</a><br>Linux下运行PL程序<br><a href="https://forums.xilinx.com/t5/嵌入式-工具-软件开发/petalinux-2018-3在PS中配置PL导致PS无响应/td-p/1046828" target="_blank" rel="noopener">https://forums.xilinx.com/t5/嵌入式-工具-软件开发/petalinux-2018-3在PS中配置PL导致PS无响应/td-p/1046828</a><br><a href="https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/18841847/Solution+ZynqMP+PL+Programming#SolutionZynqMPPLProgramming-BitstreamFormatsBitstream" target="_blank" rel="noopener">https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/18841847/Solution+ZynqMP+PL+Programming#SolutionZynqMPPLProgramming-BitstreamFormatsBitstream</a><br><a href="https://www.xilinx.com/support/documentation/ip_documentation/axi_ref_guide/latest/ug1037-vivado-axi-reference-guide.pdf" target="_blank" rel="noopener">https://www.xilinx.com/support/documentation/ip_documentation/axi_ref_guide/latest/ug1037-vivado-axi-reference-guide.pdf</a><br>PS PL双向通信<br><a href="https://blog.csdn.net/botao_li/article/details/86301995" target="_blank" rel="noopener">https://blog.csdn.net/botao_li/article/details/86301995</a><br>创建AXI总线<br><a href="https://www.cnblogs.com/limanjihe/p/9885014.html" target="_blank" rel="noopener">https://www.cnblogs.com/limanjihe/p/9885014.html</a></p>
+<h3 id="Radar工程"><a href="#Radar工程" class="headerlink" title="Radar工程"></a>Radar工程</h3><p>Vivado工程文件位置 F:/test/FPGA/radar1<br><a href="https://blog.csdn.net/yohe12/article/details/105264853" target="_blank" rel="noopener">https://blog.csdn.net/yohe12/article/details/105264853</a></p>
+<h2 id="DDR数据对齐方式"><a href="#DDR数据对齐方式" class="headerlink" title="DDR数据对齐方式"></a>DDR数据对齐方式</h2><p><a href="https://zhuanlan.zhihu.com/p/143524408?utm_source=wechat_session" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/143524408?utm_source=wechat_session</a></p>
+<h2 id="调试错误汇总"><a href="#调试错误汇总" class="headerlink" title="调试错误汇总"></a>调试错误汇总</h2><p>插入SD卡不能建立ila核<br>生成U-Boot出现错误Default bitsream is not found, please specify a bitstream file path with –f<br>petalinux-package –boot –fsbl zynqmp_fsbl.elf –u-boot<br>petalinux-package –boot –fsbl zynqmp_fsbl.elf –u-boot –fpga system.bit<br>Xilinx FPGA 中“Done did not go high”</p>
+<h3 id="EMIO-linux驱动"><a href="#EMIO-linux驱动" class="headerlink" title="EMIO linux驱动"></a>EMIO linux驱动</h3><p><a href="https://blog.csdn.net/Chi_Hong/article/details/84581017" target="_blank" rel="noopener">https://blog.csdn.net/Chi_Hong/article/details/84581017</a><br><a href="https://blog.csdn.net/Claudedy/article/details/99426447(最终参考)" target="_blank" rel="noopener">https://blog.csdn.net/Claudedy/article/details/99426447(最终参考)</a></p>
+<h2 id="AD9628调试教程"><a href="#AD9628调试教程" class="headerlink" title="AD9628调试教程"></a>AD9628调试教程</h2><h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><p>信号:<br>LVDS: ±CLK, ±DCO, ±DATA[11:0], ±OR(超量程标志)<br>SPI: OEB, SCLK, SDIO, CSB<br>ADC配置引脚: PDWN</p>
+<h2 id="UDP调试"><a href="#UDP调试" class="headerlink" title="UDP调试"></a><a href="https://blog.csdn.net/nanfeibuyi/article/details/88540233" target="_blank" rel="noopener">UDP调试</a></h2><p>lsof检测文件是否被打开</p>
+<h2 id="云端linux下载PL程序"><a href="#云端linux下载PL程序" class="headerlink" title="云端linux下载PL程序"></a>云端linux下载PL程序</h2><p><a href="https://www.cnblogs.com/luego/p/11777104.html" target="_blank" rel="noopener">https://www.cnblogs.com/luego/p/11777104.html</a></p>
+<h2 id="ZYNQ自启动应用程序"><a href="#ZYNQ自启动应用程序" class="headerlink" title="ZYNQ自启动应用程序"></a>ZYNQ自启动应用程序</h2><p><a href="https://blog.csdn.net/leon_zeng0/article/details/95497335" target="_blank" rel="noopener">https://blog.csdn.net/leon_zeng0/article/details/95497335</a><br><a href="https://blog.csdn.net/m0_37765662/article/details/100156137" target="_blank" rel="noopener">https://blog.csdn.net/m0_37765662/article/details/100156137</a><br><a href="https://www.xilinx.com/support/documentation/sw_manuals/xilinx2017_4/ug1144-petalinux-tools-reference-guide.pdf" target="_blank" rel="noopener">ug1144_60页</a><br><a href="https://blog.csdn.net/yishuicanhong/article/details/83020016" target="_blank" rel="noopener">https://blog.csdn.net/yishuicanhong/article/details/83020016</a></p>
+<p>DONE Pin is not high on target fpga<br>解决方案：在Run Configuration中，勾选Reset entire System和Program FPGA</p>
+<p>Genetate Block Design的时候出现有地址没有配置<br>解决方案：打开Address Editor选择Auto Assign Address</p>
+<p>[IP_Flow 19-3153] Bus Interface ‘clk’: ASSOCIATED_BUSIF bus parameter is missing.<br>Ports and Interfaces-&gt;BRAM_PORT右击-&gt;Auto Infer Interface Chooser</p>
+<p>Your display is too small to run Menuconfig!It must be at least 19 lines by 80 columns.<br>Your display is too small to run Menuconfig!<br>It must be at least 19 lines by 80 columns.</p>
+<p>ERROR: fsbl-2017.4+gitAUTOINC+77448ae629-r0 do_compile: Function failed: do_compile (log file is located at /home/allen/peta_pro/ax_irqkey/build/tmp/work/plnx_arm-xilinx-linux-gnueabi/fsbl/2017.4+gitAUTOINC+77448ae629-r0/temp/log.do_compile.8420)<br>打开irq时 修改中断树</p>
+<p>ERROR: Function failed: do_compile (log file is located at /home/allen/peta_pro/radar/build/tmp/work/plnx_arm-xilinx-linux-gnueabi/fsbl/2017.4+gitAUTOINC+77448ae629-r0/temp/log.do_compile.3841)<br>解决方法:继续编译一次</p>
+<p>使用Diagram编程时，必须要导出hardware–&gt;Launch SDK才能够运行时钟</p>
+<p>././include/linux/kconfig.h:4:32: fatal error: generated/autoconf.h: 没有那个文件或目录<br>解决方案：编译内核</p>
+<p>ERROR [INFO] sourcing bitbake<br>ERROR: Failed to source bitbake<br>ERROR: Failed to config project.<br>ERROR: Get hw description Failed!.<br>解决方案查看./build/config.log</p>
+<h2 id="Radar最终版移植步骤"><a href="#Radar最终版移植步骤" class="headerlink" title="Radar最终版移植步骤"></a>Radar最终版移植步骤</h2><p>硬件信息文件位置F:\Project\11Software\RadarBoard\test\PSTest<br>实现PL端每隔1s写第一块Bram然后发送一个trig给PS<br>写另外一块Bram写完之后发送EMIO信号给PL PL检测改信号上升沿并将数据写入第一块Bram</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># cd ~/</span></span><br><span class="line"><span class="meta"># mkdir RadarFinish</span></span><br><span class="line"><span class="meta"># source /opt/Xilinx/Vivado/2017.4/settings64.sh</span></span><br><span class="line"><span class="meta"># source /opt/pkg/petalinux/settings.sh</span></span><br><span class="line"><span class="meta"># petalinux-create --type project --template zynq --name Radar_pro</span></span><br><span class="line"><span class="meta"># petalinux-config --get-hw-description /mnt/share/bram_test.sdk</span></span><br><span class="line"># <span class="comment">//配置内核源码位置</span></span><br><span class="line"><span class="meta"># petalinux-config -c kernel</span></span><br><span class="line"># <span class="comment">//修改增加设备树</span></span><br><span class="line"><span class="meta"># petalinux-config -c rootfs</span></span><br><span class="line"><span class="meta"># petalinux-build</span></span><br><span class="line"><span class="meta"># petalinux-package --boot --fsbl ./images/linux/zynq_fsbl.elf --fpga ./images/linux/RADARTest.bit --u-boot --force</span></span><br></pre></td></tr></table></figure>
+<p>配置 ifconfig eth0 192.168.0.2 netmask 255.255.255.0 up<br>编译中断驱动模块 文件位置：/home/allen/RadarFinish/kernel/linux-xlnx-xilinx-v2017.4<br>使用Makefile指定内核位置进行编译 编译之前需要进行内核编译</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- distclean </span><br><span class="line">make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- xilinx_zynq_defconfig </span><br><span class="line">make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- menuconfig </span><br><span class="line">make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- all -j16</span><br></pre></td></tr></table></figure>
+<p>make<br>scp irq_drv.ko <a href="mailto:root@192.168.0.2">root@192.168.0.2</a>:/home/root/<br>arm-linux-gnueabihf-gcc keyirqAPP.c -o keyirqAPP</p>
+<p>创建自启动程序<br>petalinux-create -t apps –template install –name autorunapp –enable</p>
+<p>#!/bin/sh</p>
+<p>echo “Hello PetaLinux World”<br>mkdir /home/allen<br>mount -t vfat /dev/mmcblk0p1 /home/allen<br>mkdir /etc/boa</p>
+<p>cp /home/allen/Radar/boa/bin/boa.conf /etc/boa/<br>cp /home/allen/Radar/boa/bin/boa /bin/<br>mkdir /var/log/boa<br>cp -rf /home/allen/Radar/boa/var/www /var/<br>cp /home/allen/Radar/boa/mime.types /etc/<br>/bin/boa</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># <span class="comment">//文件位置project-spec/meta-user/recipes-bsp/device-tree/files/system-user.dtsi</span></span><br><span class="line"># <span class="comment">//注意不要将compatible中的字母写错了 否则设备树安装不上 会导致内核崩溃</span></span><br><span class="line"># /include/ <span class="string">"system-conf.dtsi"</span></span><br><span class="line"># / &#123;</span><br><span class="line"><span class="meta"># 	model = <span class="meta-string">"Zynq ALINX AX7350 Development Board"</span>;</span></span><br><span class="line"><span class="meta"># 	compatible = <span class="meta-string">"alnx,zynq-ax7350"</span>,<span class="meta-string">"xlnx,zynq-7000"</span>;</span></span><br><span class="line"># </span><br><span class="line"># &#125;;</span><br><span class="line"># &amp;amba_pl&#123;</span><br><span class="line"># 	zynq_irq:radar_irq&#123;</span><br><span class="line"><span class="meta"># 		compatible = <span class="meta-string">"xlnx,zynq_irq"</span>;</span></span><br><span class="line"><span class="meta"># 		interrupt-parent = <span class="meta-string">&lt;&amp;intc&gt;;</span></span></span><br><span class="line"><span class="meta"># 		interrupts = <span class="meta-string">&lt;0 29 1&gt;;  //1为上升沿触发，4为高电平触发</span></span></span><br><span class="line"># 	&#125;;</span><br><span class="line"># &#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="硬件部分调试"><a href="#硬件部分调试" class="headerlink" title="硬件部分调试"></a>硬件部分调试</h2><h3 id="LVDS差分时钟"><a href="#LVDS差分时钟" class="headerlink" title="LVDS差分时钟"></a>LVDS差分时钟</h3>
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作!</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    تبرّع
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="XD Lv WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/05/15/webServer/" rel="prev" title="webServer">
+      <i class="fa fa-chevron-left"></i> webServer
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/09/23/MotorImagery/" rel="next" title="MotorImagery">
+      MotorImagery <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          المحتويات
+        </li>
+        <li class="sidebar-nav-overview">
+          عام
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#教程系列"><span class="nav-number">1.</span> <span class="nav-text">教程系列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ubuntu环境安装"><span class="nav-number">1.1.</span> <span class="nav-text">Ubuntu环境安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#petalinux安装（需要和vivado版本对应）"><span class="nav-number">1.2.</span> <span class="nav-text">petalinux安装（需要和vivado版本对应）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linux-vivado安装（需要和petalinux版本对应）"><span class="nav-number">1.3.</span> <span class="nav-text">linux vivado安装（需要和petalinux版本对应）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#petalinux使用"><span class="nav-number">1.4.</span> <span class="nav-text">petalinux使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#移植Vivado生成的硬件程序到petalinux"><span class="nav-number">1.4.1.</span> <span class="nav-text">移植Vivado生成的硬件程序到petalinux</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内核移植"><span class="nav-number">1.5.</span> <span class="nav-text">内核移植</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#内核移植编译"><span class="nav-number">1.5.1.</span> <span class="nav-text">内核移植编译</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#petalinux应用程序编译"><span class="nav-number">1.5.2.</span> <span class="nav-text">petalinux应用程序编译</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#petalinux中断使用（相应设备驱动需要在相应的内核底下编译）"><span class="nav-number">1.5.3.</span> <span class="nav-text">petalinux中断使用（相应设备驱动需要在相应的内核底下编译）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#驱动编写"><span class="nav-number">1.5.4.</span> <span class="nav-text">驱动编写</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PL和PS通过bram进行双向通信"><span class="nav-number">1.6.</span> <span class="nav-text">PL和PS通过bram进行双向通信</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FPGA和PS联合编程"><span class="nav-number">1.7.</span> <span class="nav-text">FPGA和PS联合编程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#petalinux中断最终版"><span class="nav-number">1.8.</span> <span class="nav-text">petalinux中断最终版</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#PL硬件设计编写SDK测试文件确定"><span class="nav-number">1.8.1.</span> <span class="nav-text">PL硬件设计编写SDK测试文件确定</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PL和PS数据交互方式及其优缺点"><span class="nav-number">1.9.</span> <span class="nav-text">PL和PS数据交互方式及其优缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Petalinux，PL通信"><span class="nav-number">1.10.</span> <span class="nav-text">Petalinux，PL通信</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BOA"><span class="nav-number">1.11.</span> <span class="nav-text">BOA</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用到的参考链接"><span class="nav-number">1.12.</span> <span class="nav-text">用到的参考链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Radar工程"><span class="nav-number">1.13.</span> <span class="nav-text">Radar工程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DDR数据对齐方式"><span class="nav-number">2.</span> <span class="nav-text">DDR数据对齐方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调试错误汇总"><span class="nav-number">3.</span> <span class="nav-text">调试错误汇总</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#EMIO-linux驱动"><span class="nav-number">3.1.</span> <span class="nav-text">EMIO linux驱动</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AD9628调试教程"><span class="nav-number">4.</span> <span class="nav-text">AD9628调试教程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#接口"><span class="nav-number">4.1.</span> <span class="nav-text">接口</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UDP调试"><span class="nav-number">5.</span> <span class="nav-text">UDP调试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#云端linux下载PL程序"><span class="nav-number">6.</span> <span class="nav-text">云端linux下载PL程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ZYNQ自启动应用程序"><span class="nav-number">7.</span> <span class="nav-text">ZYNQ自启动应用程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Radar最终版移植步骤"><span class="nav-number">8.</span> <span class="nav-text">Radar最终版移植步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#硬件部分调试"><span class="nav-number">9.</span> <span class="nav-text">硬件部分调试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LVDS差分时钟"><span class="nav-number">9.1.</span> <span class="nav-text">LVDS差分时钟</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">XD Lv</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-name">المقالات</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">التصنيفات</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">الوسوم</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/lxdfrank" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;lxdfrank" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XD Lv</span>
+</div>
+  <div class="powered-by">تطبيق الموقع <a href="https://github.com/lxdfrank" rel="noopener" target="_blank">XD Lv</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
